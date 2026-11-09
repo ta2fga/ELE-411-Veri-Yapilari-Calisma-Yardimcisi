@@ -1,0 +1,26 @@
+{
+  "id": "rec-trace-2019q1",
+  "order": 6,
+  "type": "trace",
+  "title": "myRecursiveFunc(5, 2) izleme",
+  "source": "Midterm2019 Q1",
+  "difficulty": "Kolay",
+  "statement": "<p>Aşağıdaki recursive fonksiyon için <code>myRecursiveFunc(5, 2)</code> çağrısını izleyin. Her recursive çağrının parametrelerini ve sonucu yazın. (8 puan)</p>",
+  "code": "int myRecursiveFunc(int a, int b){\n    if (a % b == 2)\n        return a;\n    else\n        return b + myRecursiveFunc(a+b, a-b);\n}",
+  "runCode": "int myRecursiveFunc(int a, int b){\n    if (a % b == 2)\n        return a;\n    else {\n        cout << (a+b) << \" \" << (a-b) << endl;   // sonraki çağrının parametreleri\n        return b + myRecursiveFunc(a+b, a-b);\n    }\n}\nint main(){\n    cout << myRecursiveFunc(5, 2) << endl;\n    return 0;\n}",
+  "blanks": [
+    {
+      "label": "1. recursive çağrının parametreleri (a b)",
+      "answer": "7 3"
+    },
+    {
+      "label": "2. recursive çağrının parametreleri (a b)",
+      "answer": "10 4"
+    },
+    {
+      "label": "myRecursiveFunc(5, 2) dönüş değeri",
+      "answer": "15"
+    }
+  ],
+  "explanation": "<ul><li><code>f(5,2)</code>: 5 % 2 = 1 ≠ 2 → <code>2 + f(7, 3)</code></li><li><code>f(7,3)</code>: 7 % 3 = 1 ≠ 2 → <code>3 + f(10, 4)</code></li><li><code>f(10,4)</code>: 10 % 4 = 2 → <b>10</b> döner (base case)</li><li>Dönüşler: f(7,3) = 3 + 10 = 13, f(5,2) = 2 + 13 = <b>15</b></li></ul>"
+}

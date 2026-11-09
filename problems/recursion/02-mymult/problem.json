@@ -1,0 +1,27 @@
+{
+  "id": "rec-mymult",
+  "order": 2,
+  "title": "myMult — toplama ile çarpma",
+  "source": "Lecture 1",
+  "difficulty": "Kolay",
+  "statement": "<p>Derste yazılan <code>myMult(a, b)</code> fonksiyonunu yazın: <code>a · b</code> değerini <b>çarpma operatörü kullanmadan</b>, recursive olarak, toplama ile hesaplayın. <code>a ≥ 1</code> varsayın (b herhangi bir tamsayı).</p>",
+  "io": {
+    "inputs": [
+      "<code>a</code>: a ≥ 1",
+      "<code>b</code>: tamsayı"
+    ],
+    "outputs": [
+      "<code>a · b</code>"
+    ]
+  },
+  "signature": "int myMult(int a, int b)",
+  "forbidden": [
+    "noloop",
+    "multiply"
+  ],
+  "hints": [
+    "a · b = b + (a − 1) · b",
+    "Base case: a == 1 iken sonuç b’dir."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(a) zaman ve çağrı yığını. Derste base case <code>a == 1</code>; bu yüzden a = 0 için çalışmaz."
+}

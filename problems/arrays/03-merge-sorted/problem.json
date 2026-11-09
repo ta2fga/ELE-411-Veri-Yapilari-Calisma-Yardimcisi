@@ -1,0 +1,28 @@
+{
+  "id": "arr-merge-sorted",
+  "order": 3,
+  "title": "İki sıralı diziyi birleştirme",
+  "source": "Study 2 · sd.pdf (düzeltilmiş)",
+  "difficulty": "Kolay",
+  "statement": "<p>İki <b>sıralı</b> int dizisini, sonuç da sıralı olacak şekilde <code>arr3</code>’e birleştirin. Diziler ve uzunlukları parametre olarak verilir; <code>arr3</code>’ün boyutu n1 + n2’dir.</p><p class=\"muted\">sd.pdf’teki çözümde döngüdeki <code>if (arr1[i] &lt; arr2[j])</code> satırı eksik (tek başına <code>else</code> derlenmez).</p>",
+  "io": {
+    "inputs": [
+      "<code>arr1</code>, <code>arr2</code>: sıralı diziler",
+      "<code>n1</code>, <code>n2</code>: uzunluklar",
+      "<code>arr3</code>: sonuç dizisi"
+    ],
+    "outputs": [
+      "Yok; arr3 doldurulur"
+    ]
+  },
+  "signature": "void mergeArrays(int arr1[], int arr2[], int n1, int n2, int arr3[])",
+  "forbidden": [
+    "stl",
+    "sort"
+  ],
+  "hints": [
+    "i, j, k = 0. İkisinde de eleman varken küçük olanı arr3[k++]’ya alın.",
+    "Döngü bitince birinde kalan elemanları kopyalayın."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(n1 + n2) — her eleman bir kez kopyalanır."
+}

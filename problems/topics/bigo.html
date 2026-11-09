@@ -1,0 +1,29 @@
+<p><b>Big-O</b>, girdi boyutu N büyürken algoritmanın çalışma süresinin (en kötü durumda) nasıl büyüdüğünü gösterir. Sabitler ve küçük terimler atılır: 3N² + 5N + 2 → O(N²).</p>
+<h4>Büyüme sırası</h4>
+<p><code>O(1) &lt; O(logN) &lt; O(N) &lt; O(NlogN) &lt; O(N²) &lt; O(N²logN) &lt; O(N³) &lt; O(N⁴) &lt; O(2ᴺ)</code></p>
+<h4>Döngü kalıpları</h4>
+<table class="tbl">
+<tr><th>Kalıp</th><th>Karmaşıklık</th></tr>
+<tr><td><code>for (i = 0; i &lt; N; i++)</code></td><td>O(N)</td></tr>
+<tr><td><code>for (i = 1; i &lt; N; i *= 2)</code> veya <code>i /= 2</code></td><td>O(logN)</td></tr>
+<tr><td>İç içe iki döngü, ikisi de N’ye bağlı (<code>j &gt; i</code> gibi üçgen döngü dahil: N(N+1)/2)</td><td>O(N²)</td></tr>
+<tr><td>Dış döngü N, iç döngü <code>j *= 2</code></td><td>O(NlogN)</td></tr>
+<tr><td>Her adımda 2 recursive çağrı, boyut 1 azalıyor (Hanoi)</td><td>O(2ᴺ)</td></tr>
+</table>
+<h4>Veri yapısı işlemleri (en kötü durum)</h4>
+<table class="tbl">
+<tr><th>İşlem</th><th>Dizi (sırasız)</th><th>Dizi (sıralı)</th><th>Bağlı liste</th></tr>
+<tr><td>i. elemana erişim</td><td>O(1)</td><td>O(1)</td><td>O(N) (baştan yürümek gerekir)</td></tr>
+<tr><td>Arama</td><td>O(N)</td><td>O(logN) (binary search)</td><td>O(N) (sıralı olsa bile!)</td></tr>
+<tr><td>Min / max</td><td>O(N)</td><td>O(1) (uçlarda)</td><td>O(N) (sıralıysa min O(1))</td></tr>
+<tr><td>Başa ekleme</td><td>O(N) (kaydırma)</td><td>O(N)</td><td>O(1)</td></tr>
+<tr><td>Tüm elemanları toplama</td><td>O(N)</td><td>O(N)</td><td>O(N)</td></tr>
+</table>
+<p><b>Binary search</b> en kötü durumda <b>⌊log₂N⌋ + 1</b> karşılaştırma yapar (her adımda aralık yarıya iner) → O(logN).</p>
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li><code>for (i = 0; i &lt; n; i = i * 2)</code>: i = 0 ile başladığı için i hep 0 kalır → <b>sonsuz döngü</b>! Amaçlanan (i = 1 ile) O(logN).</li>
+<li>Sıralı bağlı listede arama yine O(N): binary search için ortadaki elemana O(1)’de erişmek gerekir.</li>
+<li>İç döngü <code>j = N; j &gt; i</code> → toplam N + (N−1) + … + 1 = N(N+1)/2 → yine O(N²).</li>
+<li><code>i /= 2</code> ile küçülen while döngüsü → O(logN).</li>
+</ul>

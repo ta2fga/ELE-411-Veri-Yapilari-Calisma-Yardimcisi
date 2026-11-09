@@ -1,0 +1,23 @@
+{
+  "id": "exam-midterm-pdf",
+  "order": 2,
+  "type": "exam",
+  "title": "midterm.pdf seti (zamanlayıcılı)",
+  "source": "midterm.pdf",
+  "difficulty": "75 dk",
+  "statement": "<p>midterm.pdf’teki üç soru (BST toplamı, stack’te arama, sıralı dizide sayma).</p>",
+  "sections": [
+    {
+      "problem": "rec-bst-sum",
+      "minutes": 25
+    },
+    {
+      "problem": "stack-search",
+      "minutes": 25
+    },
+    {
+      "problem": "arr-count-sorted",
+      "minutes": 25
+    }
+  ]
+}

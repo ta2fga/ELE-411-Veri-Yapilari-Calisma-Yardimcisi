@@ -1,0 +1,34 @@
+{
+  "id": "q-trace-2020",
+  "order": 4,
+  "type": "trace",
+  "title": "testFunction: kontrol noktalarında queue ve stack",
+  "source": "Midterm2020",
+  "difficulty": "Orta",
+  "statement": "<p>Aşağıdaki fonksiyonun ne yaptığını, örnek giriş queue’su <b>Q = 5 2 9 4</b> (5 en önde) için kontrol noktalarındaki queue ve stack içeriklerini izleyerek açıklayın. (Sınavda süre: 15 dk)</p><p class=\"muted\">Yazım: queue önden arkaya, stack alttan üste; boşsa “boş” yazın.</p>",
+  "code": "void testFunction(Queue Q)\n{\n    Stack S;\n    int item;\n\n    while (!Q.isEmpty())\n    {\n        item = Q.peekFront();\n        Q.dequeue();\n        S.push(item);\n    }\n    // CHECK POINT 1\n    while (!S.isEmpty())\n    {\n        item = S.peek();\n        S.pop();\n        Q.enqueue(item);\n    }\n    // CHECK POINT 2\n}",
+  "runCode": "void testFunction(Queue Q) {\n    Stack S;\n    int item;\n    while (!Q.isEmpty()) { item = Q.peekFront(); Q.dequeue(); S.push(item); }\n    cout << queueToString(Q) << endl << stackToString(S) << endl;   // CHECK POINT 1\n    while (!S.isEmpty()) { item = S.peek(); S.pop(); Q.enqueue(item); }\n    cout << queueToString(Q) << endl << stackToString(S) << endl;   // CHECK POINT 2\n}\nint main() {\n    Queue Q = makeQueue({5, 2, 9, 4});\n    testFunction(Q);\n    cout << queueToString(Q) << endl;   // main'deki Q\n    return 0;\n}",
+  "blanks": [
+    {
+      "label": "CHECK POINT 1 — Q (ön→arka)",
+      "answer": "boş"
+    },
+    {
+      "label": "CHECK POINT 1 — S (alt→üst)",
+      "answer": "5 2 9 4"
+    },
+    {
+      "label": "CHECK POINT 2 — Q (ön→arka)",
+      "answer": "4 9 2 5"
+    },
+    {
+      "label": "CHECK POINT 2 — S (alt→üst)",
+      "answer": "boş"
+    },
+    {
+      "label": "Fonksiyondan sonra main’deki Q (ön→arka)",
+      "answer": "5 2 9 4"
+    }
+  ],
+  "explanation": "<p><b>Fonksiyon queue’yu ters çevirir.</b> İlk döngü elemanları önden alıp stack’e push eder: stack’in altında 5, üstünde 4 olur, Q boşalır (CP1). İkinci döngü stack’in üstünden (4) başlayarak geri enqueue eder: Q = 4 9 2 5, S boş (CP2).</p><p><b>Tuzak:</b> Q <b>değerle</b> geçirildiği için fonksiyon bir kopyayı ters çevirir; çağırandaki queue <b>5 2 9 4</b> olarak kalır. Ters çevirmenin dışarıya yansıması için <code>Queue&amp; Q</code> olmalıydı.</p>"
+}

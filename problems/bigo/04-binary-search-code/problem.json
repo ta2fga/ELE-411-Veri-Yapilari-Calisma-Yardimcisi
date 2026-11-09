@@ -1,0 +1,25 @@
+{
+  "id": "bigo-binary-search-code",
+  "order": 4,
+  "title": "Binary search + karşılaştırma sayacı",
+  "source": "Study 8",
+  "difficulty": "Orta",
+  "statement": "<p>Sıralı bir dizide binary search yapan fonksiyonu yazın. Bulursa indeksi, bulamazsa −1 döndürsün. Ayrıca her adımda ortadaki elemanla yapılan karşılaştırmayı <code>comparisons</code> sayacında <b>bir kez</b> sayın. Testler sonucu ve sayacın en kötü durum sınırı olan <b>⌊log₂N⌋ + 1</b>’i aşmadığını kontrol eder.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: artan sıralı dizi (farklı elemanlar)",
+      "<code>n</code>: uzunluk",
+      "<code>target</code>: aranan",
+      "<code>comparisons</code>: referans sayaç (0’dan başlar)"
+    ],
+    "outputs": [
+      "Hedefin indeksi ya da −1"
+    ]
+  },
+  "signature": "int binarySearch(int arr[], int n, int target, int& comparisons)",
+  "hints": [
+    "first = 0, last = n − 1; while (first <= last) { mid = (first + last) / 2; comparisons++; ... }",
+    "arr[mid] == target → mid döndür; arr[mid] < target → first = mid + 1; değilse last = mid − 1."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(logN). Her döngü adımı aralığı yarıya indirir."
+}

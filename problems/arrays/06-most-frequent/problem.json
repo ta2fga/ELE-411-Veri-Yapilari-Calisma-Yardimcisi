@@ -1,0 +1,26 @@
+{
+  "id": "arr-most-frequent",
+  "order": 6,
+  "title": "Dizide en sık geçen eleman",
+  "source": "Study 11",
+  "difficulty": "Orta",
+  "statement": "<p>Bir dizide en çok geçen elemanı bulan fonksiyonu yazın. Eşitlik durumunda dizide <b>önce görülen</b> eleman döndürülsün. Dizi boş değildir. Algoritmanızın karmaşıklığını not edin.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi (n ≥ 1)",
+      "<code>n</code>: uzunluk"
+    ],
+    "outputs": [
+      "En sık geçen eleman"
+    ]
+  },
+  "signature": "int mostFrequent(int arr[], int n)",
+  "forbidden": [
+    "stl"
+  ],
+  "hints": [
+    "Her arr[i] için kaç kez geçtiğini iç döngüyle sayın.",
+    "Sadece sayı bestCount’tan KESİNLİKLE büyükse güncelleyin; böylece eşitlikte önce görülen kalır."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N²) zaman, O(1) bellek. Alternatifler: sıralayıp ardışık blokları saymak O(NlogN); hash map ile O(N) ortalama."
+}

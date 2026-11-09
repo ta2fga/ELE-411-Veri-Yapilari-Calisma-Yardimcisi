@@ -1,0 +1,10 @@
+[
+  {"id": "recursion", "num": 1, "title": "Recursion"},
+  {"id": "bigo",      "num": 2, "title": "Algoritma Karmaşıklığı (Big-O)"},
+  {"id": "arrays",    "num": 3, "title": "Dizi Tabanlı Yapılar (ArrayBag)"},
+  {"id": "linked",    "num": 4, "title": "Bağlı Listeler"},
+  {"id": "stack",     "num": 5, "title": "Stack"},
+  {"id": "queue",     "num": 6, "title": "Queue"},
+  {"id": "sorting",   "num": 7, "title": "Sıralama"},
+  {"id": "exam",      "num": 8, "title": "Deneme Sınavı"}
+]

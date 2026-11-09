@@ -1,0 +1,22 @@
+{
+  "id": "ll-linkedbag",
+  "order": 3,
+  "title": "LinkedBag: add (sıralı), remove, contains",
+  "source": "Lecture 4",
+  "difficulty": "Orta",
+  "statement": "<p>Lecture 4’teki bağlı <code>LinkedBag</code> sınıfının <code>add</code>, <code>remove</code> ve <code>contains</code> metotlarını yazın.</p><ul><li><b>add</b>: derste olduğu gibi liste <b>küçükten büyüğe sıralı</b> kalacak şekilde doğru yere ekle; <code>true</code> döndür.</li><li><b>remove</b>: ilk eşleşen düğümü listeden çıkar ve <code>delete</code> et; yoksa <code>false</code>.</li><li><b>contains</b>: varsa <code>true</code>.</li></ul><p class=\"muted\">Dikkat: dersteki <code>add</code> kodu, baştaki elemana <b>eşit</b> bir değer eklenince <code>prev</code> nullptr kaldığı için çöker. Testlerde bu durum da var.</p>",
+  "io": {
+    "inputs": [
+      "Torba işlemleri (int)"
+    ],
+    "outputs": [
+      "Dönüş değerleri ve liste içeriği (toString)"
+    ]
+  },
+  "hints": [
+    "add: yeni düğüm; liste boşsa ya da headPtr->item >= newItem ise başa ekle.",
+    "Değilse prev/cur ile cur != nullptr && cur->item < newItem olduğu sürece ilerle; prev->next = yeni; yeni->next = cur.",
+    "remove: getPointerTo ile bul. Baştaysa headPtr = headPtr->next; değilse öncekini bulup prev->next = silinecek->next; delete; itemCount--."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> add, remove, contains O(N). Dersteki koddan tek fark baş kontrolünde <code>&gt;</code> yerine <code>&gt;=</code>."
+}

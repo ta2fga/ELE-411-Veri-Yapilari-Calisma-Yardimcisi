@@ -1,0 +1,26 @@
+{
+  "id": "rec-bst-sum",
+  "order": 8,
+  "title": "BST'deki elemanların toplamı",
+  "source": "midterm.pdf",
+  "difficulty": "Kolay",
+  "statement": "<p>Tamsayılardan oluşan bir ikili arama ağacındaki (BST) tüm elemanları toplayan <b>recursive</b> fonksiyonu yazın. Her düğümde <code>root-&gt;item</code>, <code>root-&gt;left</code>, <code>root-&gt;right</code> doğrudan erişilebilir; çocuk yoksa pointer null’dır.</p><p class=\"muted\">Sınavda sınıfın adı <code>Node</code> idi; burada bağlı liste düğümüyle karışmasın diye <code>TreeNode</code>.</p>",
+  "io": {
+    "inputs": [
+      "<code>root</code>: BST’nin kökü (TreeNode*)"
+    ],
+    "outputs": [
+      "<code>result</code>: elemanların toplamı (int)"
+    ]
+  },
+  "signature": "int sumBST(TreeNode* root)",
+  "forbidden": [
+    "noloop",
+    "stl"
+  ],
+  "hints": [
+    "Base case: root == nullptr → 0.",
+    "return root->item + sumBST(root->left) + sumBST(root->right);"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> Her düğüm bir kez ziyaret edilir → O(N). Çağrı yığını ağacın yüksekliği kadar: dengeli ağaçta O(logN), en kötü (zincir) O(N)."
+}

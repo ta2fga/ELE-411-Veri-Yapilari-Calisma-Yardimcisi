@@ -1,0 +1,20 @@
+{
+  "id": "stack-remove-all",
+  "order": 3,
+  "title": "Stack'ten hedefin tüm geçişlerini silme",
+  "source": "Midterm2019 Q6",
+  "difficulty": "Orta",
+  "statement": "<p>Bir int stack'inden hedef elemanın <b>tüm geçişlerini</b> silen bir remove fonksiyonu yazın. Algoritmanız <b>diğer elemanların sırasını korumalıdır</b>. Dizi, queue veya başka veri yapısı kullanamazsınız; <b>sadece bir yardımcı stack</b> kullanabilirsiniz. (13 puan)</p><p class=\"muted\">Sınavda çıktı “sonuç stack'ini döndür” diye verilmişti. Burada stack referansla geçiriliyor ve yerinde değiştiriliyor. Sınavda isterseniz <code>Stack removeAll(Stack myStack, int targetItem)</code> yazıp sonda <code>return myStack;</code> da diyebilirsiniz.</p>",
+  "io": {
+    "inputs": ["<code>myStack</code>: int stack'i", "<code>targetItem</code>: tüm geçişleri silinecek tamsayı"],
+    "outputs": ["<code>myStack</code>: hedefleri silinmiş, diğer elemanları aynı sırada kalan stack"]
+  },
+  "signature": "void removeAll(Stack& myStack, int targetItem)",
+  "forbidden": ["array", "stl", "queue"],
+  "hints": [
+    "Saymaya çok benzer: tüm elemanları gezmeniz gerekiyor.",
+    "Elemanı peek + pop ile aldıktan sonra sadece hedef DEĞİLSE temp'e push edin (böylece hedefleri atmış olursunuz).",
+    "Sonunda temp'i geri dökün. temp'te sıra ters olduğu için geri dökünce kalan elemanlar orijinal sıralarına döner."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, O(N) ek bellek. Her eleman en fazla bir kez temp'e gider, bir kez geri gelir."
+}

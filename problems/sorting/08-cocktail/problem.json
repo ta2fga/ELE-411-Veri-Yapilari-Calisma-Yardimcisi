@@ -1,0 +1,28 @@
+{
+  "id": "sort-cocktail",
+  "order": 8,
+  "title": "Cocktail sort (çift yönlü bubble sort)",
+  "source": "Midterm2019 Q7",
+  "difficulty": "Zor",
+  "statement": "<p>Klasik bubble sort her geçişte diziyi soldan sağa tarayıp komşuları takas eder; böylece en büyük eleman sağa gider ve sıralanmamış kısım bir küçülür. <b>Cocktail sort</b> çift yönlüdür: her geçişte önce <b>soldan sağa</b> tarayıp maksimumu sağa taşır, sonra <b>sağdan sola</b> tarayıp minimumu sola taşır. Böylece her çift yönlü geçiş sıralanmamış kısmı iki eleman küçültür. (20 puan)</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>n</code>: uzunluk"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde artan sıraya dizilir"
+    ]
+  },
+  "signature": "void cocktailSort(int arr[], int N)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "left = 0, right = N − 1 sınırlarını tutun.",
+    "İleri tarama: i = left..right−1, arr[i] > arr[i+1] ise takas; sonra right--.",
+    "Geri tarama: i = right..left+1, arr[i−1] > arr[i] ise takas; sonra left++. Hiç takas olmazsa durun."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> en kötü/ortalama O(N²), en iyi (sıralı) O(N). Bubble sort’a göre küçük elemanların sola yavaş gitmesi (“kaplumbağa”) sorununu azaltır."
+}

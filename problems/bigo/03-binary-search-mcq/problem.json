@@ -1,0 +1,72 @@
+{
+  "id": "bigo-binary-search",
+  "order": 3,
+  "type": "mcq",
+  "title": "Binary search — en kötü durum karşılaştırma sayısı",
+  "source": "Study 8",
+  "difficulty": "Orta",
+  "statement": "<p>Sıralı bir dizide binary search’ün en kötü durumda yaptığı anahtar karşılaştırma sayısını ve karmaşıklığını hesaplayın. (Her adımda ortadaki elemanla <b>bir</b> karşılaştırma sayılır.)</p>",
+  "items": [
+    {
+      "q": "N = 7 için en kötü durum karşılaştırma sayısı",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "7"
+      ],
+      "answer": "3",
+      "explain": "⌊log₂7⌋ + 1 = 2 + 1 = 3. Aralıklar: 7 → 3 → 1."
+    },
+    {
+      "q": "N = 8 için en kötü durum karşılaştırma sayısı",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "8"
+      ],
+      "answer": "4",
+      "explain": "⌊log₂8⌋ + 1 = 3 + 1 = 4. Aralıklar: 8 → 4 → 2 → 1."
+    },
+    {
+      "q": "N = 1000 için en kötü durum karşılaştırma sayısı",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "500"
+      ],
+      "answer": "10",
+      "explain": "2⁹ = 512 ≤ 1000 &lt; 1024 = 2¹⁰ → ⌊log₂1000⌋ + 1 = 9 + 1 = 10."
+    },
+    {
+      "q": "Genel formül",
+      "options": [
+        "N/2",
+        "⌊log₂N⌋",
+        "⌊log₂N⌋ + 1",
+        "N log₂N"
+      ],
+      "answer": "⌊log₂N⌋ + 1",
+      "explain": "Her karşılaştırma aralığı yarıya indirir; aralık 1’e inene kadar ⌊log₂N⌋ yarılama + son eleman için 1 karşılaştırma."
+    },
+    {
+      "q": "Karmaşıklık",
+      "options": [
+        "O(1)",
+        "O(logN)",
+        "O(N)",
+        "O(NlogN)",
+        "O(N²)",
+        "O(N²logN)",
+        "O(N³)",
+        "O(N³logN)",
+        "O(N⁴)",
+        "O(2ᴺ)"
+      ],
+      "answer": "O(logN)",
+      "explain": "⌊log₂N⌋ + 1 = O(logN)."
+    }
+  ]
+}

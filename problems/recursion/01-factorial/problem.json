@@ -1,0 +1,25 @@
+{
+  "id": "rec-factorial",
+  "order": 1,
+  "title": "Factorial (recursive)",
+  "source": "Lecture 1",
+  "difficulty": "Kolay",
+  "statement": "<p><code>n!</code> değerini <b>recursive</b> olarak hesaplayın.</p><p><code>factorial(n) = 1</code> (n = 0), <code>n · factorial(n − 1)</code> (n &gt; 0)</p>",
+  "io": {
+    "inputs": [
+      "<code>n</code>: 0 ≤ n ≤ 12"
+    ],
+    "outputs": [
+      "<code>n!</code>"
+    ]
+  },
+  "signature": "int factorial(int n)",
+  "forbidden": [
+    "noloop"
+  ],
+  "hints": [
+    "Base case: n == 0 iken 1 döndürün.",
+    "Diğer durumlarda: return n * factorial(n - 1);"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, O(N) çağrı yığını. Base case <code>n == 1</code> yazılırsa <code>factorial(0)</code> sonsuz recursion’a girer."
+}

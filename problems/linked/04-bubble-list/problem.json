@@ -1,0 +1,28 @@
+{
+  "id": "ll-bubble",
+  "order": 4,
+  "title": "Bağlı listede bubble sort",
+  "source": "Midterm2020",
+  "difficulty": "Zor",
+  "statement": "<p>Tek yönlü bir int bağlı listesi üzerinde <b>bubble sort</b> yapan fonksiyonu yazın. Fonksiyon baş düğümün pointer’ını (<code>headPtr</code>) alır ve <code>void</code> döner; sıralama gerçek liste üzerinde yapılır. Yardımcı pointer’lar kullanabilirsiniz, <b>başka veri yapısı kullanamazsınız</b>. Son düğüm nullptr’ı gösterir. (Sınavda süre: 30 dk)</p>",
+  "io": {
+    "inputs": [
+      "<code>headPtr</code>: ilk düğüm (Node*)"
+    ],
+    "outputs": [
+      "Yok (void)"
+    ]
+  },
+  "signature": "void bubbleSortList(Node* headPtr)",
+  "forbidden": [
+    "array",
+    "stl",
+    "sort"
+  ],
+  "hints": [
+    "headPtr değerle geldiği için baş düğüm değişemez → düğümleri değil item’ları takas edin (getItem/setItem).",
+    "Dış döngü: bir geçişte takas olduğu sürece devam. İç döngü: cur ile cur->getNext()’i karşılaştır, büyükse item’ları takas et.",
+    "Her geçişte en büyük sona gider; 'end' pointer’ı ile sıralı kısmı ayırabilirsiniz."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N²) en kötü, O(N) en iyi (zaten sıralıysa tek geçiş, takas yok)."
+}

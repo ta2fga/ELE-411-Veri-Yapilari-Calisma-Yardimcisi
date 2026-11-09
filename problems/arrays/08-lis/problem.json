@@ -1,0 +1,24 @@
+{
+  "id": "arr-lis",
+  "order": 8,
+  "title": "En uzun artan alt dizi (LIS)",
+  "source": "Study 15",
+  "difficulty": "Zor",
+  "statement": "<p>Sırasız bir int dizisinde <b>en uzun (kesin) artan alt dizinin</b> uzunluğunu bulun. Alt dizinin elemanları yan yana olmak zorunda değildir.</p><p>Örnek: <code>[10, 9, 2, 5, 3, 7, 101, 18]</code> → <b>4</b> (<code>[2, 3, 7, 101]</code>).</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>n</code>: uzunluk"
+    ],
+    "outputs": [
+      "LIS uzunluğu (boş dizi → 0)"
+    ]
+  },
+  "signature": "int lengthOfLIS(int arr[], int n)",
+  "hints": [
+    "lis[i] = arr[i] ile BİTEN en uzun artan alt dizinin uzunluğu olsun. Başta hepsi 1.",
+    "lis[i] = 1 + max(lis[j]) (j < i ve arr[j] < arr[i]).",
+    "Cevap tüm lis[i]’lerin maksimumu. Yer için: int* lis = new int[n]; ... delete[] lis;"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> dinamik programlama O(N²) zaman, O(N) bellek. (sd.pdf’teki saf recursive çözüm üstel zaman alır; binary search ile O(NlogN) da mümkün.)"
+}

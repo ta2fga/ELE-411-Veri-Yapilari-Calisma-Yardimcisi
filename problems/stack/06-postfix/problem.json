@@ -1,0 +1,20 @@
+{
+  "id": "stack-postfix",
+  "order": 6,
+  "title": "Postfix ifade hesaplama",
+  "source": "Lecture 5 – Stacks",
+  "difficulty": "Orta",
+  "statement": "<p>Postfix (ters Polonya) gösterimindeki bir ifadeyi Stack kullanarak hesaplayın. Örnek: infix <code>2 * (3 + 4)</code> ↔ postfix <code>2 3 4 + *</code> = 14.</p><p>Varsayımlar (Lecture 5'e göre): ifade geçerli bir postfix ifadedir; tekli operatör ve üs alma yoktur. Burada operandlar <b>negatif olmayan tamsayılar</b> (çok basamaklı olabilir) ve operatörler <code>+ - * /</code>; tüm parçalar <b>tek boşlukla ayrılmıştır</b>. Bölme tamsayı bölmesidir.</p>",
+  "io": {
+    "inputs": ["<code>expr</code>: boşlukla ayrılmış postfix ifade (ör. <code>\"10 2 - 3 -\"</code>)"],
+    "outputs": ["İfadenin int değeri"]
+  },
+  "signature": "int evaluatePostfix(string expr)",
+  "forbidden": ["stl"],
+  "hints": [
+    "Parçaları okumak için: istringstream in(expr); string tok; while (in >> tok) { ... }  Sayıya çevirmek için stoi(tok).",
+    "Sayı → push. Operatör → iki eleman al. DİKKAT: ilk aldığınız (üstteki) SAĞ operanddır (op2), ikinci aldığınız SOL operanddır (op1).",
+    "Sonucu (op1 op op2) push edin. İfade bitince stack'te kalan tek eleman cevaptır."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman (N = parça sayısı), O(N) bellek. En sık hata: <code>-</code> ve <code>/</code> işlemlerinde operand sırasını ters almak."
+}

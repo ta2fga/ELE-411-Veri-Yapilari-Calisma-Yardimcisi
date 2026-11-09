@@ -1,0 +1,32 @@
+<p><b>ADT</b> = veri koleksiyonu + bu veriler üzerindeki işlemler. Spesifikasyon işlemlerin <b>ne</b> yaptığını söyler, <b>nasıl</b> yaptığını değil. Gerçeklemenin ilk adımı veri yapısını seçmektir. (Lecture 2 – Array-Based Implementations, Bölüm 3)</p>
+<h4>ArrayBag (ders kodu)</h4>
+<ul>
+<li>Alanlar: <code>items[DEFAULT_CAPACITY]</code> (kapasite 6), <code>itemCount</code>, <code>maxItems</code>.</li>
+<li><b>add</b>: yer varsa <code>items[itemCount] = newEntry; itemCount++;</code> → O(1).</li>
+<li><b>remove</b>: <code>getIndexOf</code> ile bul; boşluk bırakmamak için <b>son elemanı</b> silinen yere taşı, <code>itemCount--</code> → O(N) (arama yüzünden). Torba sırasız olduğu için kaydırmaya gerek yok.</li>
+<li><b>contains</b>: <code>getIndexOf(anEntry) &gt; -1</code> → O(N). <b>getFrequencyOf</b>: tüm elemanları say → O(N). <b>clear</b>: <code>itemCount = 0</code> → O(1).</li>
+<li>Önce <b>core metotlar</b> (constructor, add, toVector/display, remove) yazılıp test edilir.</li>
+</ul>
+<h4>Dizi vs bağlı yapı (Lecture 3)</h4>
+<ul>
+<li>Dizi: sabit boyut, yer israfı olabilir; ama her elemana <b>eşit sürede doğrudan</b> erişim (O(1)).</li>
+<li>Küçük bir torba için dizi tabanlı gerçekleme iyi bir seçimdir.</li>
+</ul>
+<h4>Sık sorulan dizi problemleri</h4>
+<table class="tbl">
+<tr><th>Problem</th><th>Verimli yöntem</th><th>Karmaşıklık</th></tr>
+<tr><td>Sıralı dizide hedefin kaç kez geçtiği</td><td>İki binary search: ilk ve son geçiş</td><td>O(logN)</td></tr>
+<tr><td>0..n arasında eksik sayı</td><td>n(n+1)/2 − toplam</td><td>O(N)</td></tr>
+<tr><td>0/1 dizisini sıralama</td><td>0’ları say, başa 0 sonra 1 yaz (veya iki pointer)</td><td>O(N)</td></tr>
+<tr><td>İki sıralı diziyi birleştirme</td><td>İki indeks, küçük olanı al</td><td>O(N₁ + N₂)</td></tr>
+<tr><td>Sırasız dizide tekrarları silme</td><td>İç içe döngü (ek yapı yok)</td><td>O(N²) (sıralayıp O(NlogN) ama sıra bozulur)</td></tr>
+<tr><td>En sık geçen eleman</td><td>İç içe döngü / sıralayıp say</td><td>O(N²) / O(NlogN)</td></tr>
+<tr><td>En uzun artan alt dizi (LIS)</td><td>Dinamik programlama: lis[i] = 1 + max(lis[j]), j &lt; i, arr[j] &lt; arr[i]</td><td>O(N²)</td></tr>
+</table>
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li>sd.pdf Soru 1’deki tekrar silme çözümü sadece <b>sıralı</b> dizide çalışır (yan yana olanları karşılaştırır).</li>
+<li>sd.pdf Soru 2’de merge döngüsündeki <code>if (arr1[i] &lt; arr2[j])</code> eksik; döngüden sonra kalanları kopyalamayı da unutmayın.</li>
+<li>Boş dizi (n = 0) ve tek eleman kenar durumlarını kontrol edin.</li>
+<li>“&lt; O(N) yapın” denmişse lineer tarama tam puan almaz → binary search.</li>
+</ul>

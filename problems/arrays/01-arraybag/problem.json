@@ -1,0 +1,22 @@
+{
+  "id": "arr-arraybag",
+  "order": 1,
+  "title": "ArrayBag: add, remove, contains, getFrequencyOf",
+  "source": "Lecture 2",
+  "difficulty": "Orta",
+  "statement": "<p>Lecture 2’deki dizi tabanlı <code>ArrayBag</code> sınıfının <code>add</code>, <code>remove</code>, <code>contains</code> ve <code>getFrequencyOf</code> metotlarını yazın. Diğer metotlar ve <code>getIndexOf</code> hazırdır. Kapasite 6’dır.</p><ul><li><b>add</b>: yer varsa sona ekle, <code>true</code>; doluysa <code>false</code>.</li><li><b>remove</b>: bir tanesini sil, boşluk bırakmamak için son elemanı onun yerine taşı; bulunamazsa <code>false</code>.</li><li><b>contains</b>: varsa <code>true</code>. <b>getFrequencyOf</b>: kaç tane olduğu.</li></ul>",
+  "io": {
+    "inputs": [
+      "Torba işlemleri (string elemanlar)"
+    ],
+    "outputs": [
+      "Metotların dönüş değerleri"
+    ]
+  },
+  "hints": [
+    "add: bool hasRoom = itemCount < maxItems; varsa items[itemCount] = newEntry; itemCount++;",
+    "remove: int loc = getIndexOf(anEntry); loc > -1 ise itemCount--; items[loc] = items[itemCount];",
+    "contains: return getIndexOf(anEntry) > -1;  getFrequencyOf: for ile say."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> add O(1); remove, contains, getFrequencyOf O(N)."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ll-sum",
+  "order": 1,
+  "title": "Bağlı listedeki sayıların toplamı",
+  "source": "Study 3",
+  "difficulty": "Kolay",
+  "statement": "<p>Tek yönlü bir bağlı listedeki tüm sayıları toplayan fonksiyonu yazın. İlk düğümün pointer’ı verilir; son düğüm <code>nullptr</code>’ı gösterir.</p>",
+  "io": {
+    "inputs": [
+      "<code>head</code>: ilk düğüm (Node*)"
+    ],
+    "outputs": [
+      "Toplam (int)"
+    ]
+  },
+  "signature": "int sumList(Node* head)",
+  "forbidden": [
+    "stl",
+    "array"
+  ],
+  "hints": [
+    "Node* cur = head; while (cur != nullptr) { sum += cur->item; cur = cur->next; }"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N)."
+}

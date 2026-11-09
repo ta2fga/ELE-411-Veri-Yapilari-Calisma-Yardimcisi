@@ -1,0 +1,37 @@
+<p>Bağlı yapıda elemanlar <b>düğümlerde</b> (node) tutulur; her düğüm bir sonrakini gösteren pointer içerir (yük treni gibi). <code>headPtr</code> ilk düğümü, son düğüm <code>nullptr</code>’ı gösterir. (Lecture 3–4: Link-Based Implementations)</p>
+<h4>Node (Lecture 4 + sınav UML’i)</h4>
+<pre class="snippet">class Node {
+public:
+    int item;          // veri
+    Node* next;        // sonraki düğüm
+    Node(int anItem);  // next = nullptr
+    // sınav UML'i: getItem(), getNext(), setItem(x), setNext(p)
+};</pre>
+<h4>Temel kalıplar</h4>
+<pre class="snippet">for (Node* cur = headPtr; cur != nullptr; cur = cur->next) { ... }   // gezinme
+
+Node* n = new Node(x); n->next = headPtr; headPtr = n;   // başa ekleme O(1)
+
+prev->next = cur->next; delete cur;                       // cur'u silme (prev gerekli)</pre>
+<h4>LinkedBag (Lecture 4)</h4>
+<ul>
+<li><b>add</b>: derste liste <b>sıralı</b> tutuluyor: doğru yeri bulup araya ekliyor → O(N).</li>
+<li><b>remove</b>: <code>getPointerTo</code> ile bul; baştaysa <code>headPtr = headPtr-&gt;next</code>, değilse öncekini bulup bağla; <code>delete</code> → O(N).</li>
+<li><b>clear</b> / destructor: tüm düğümleri tek tek <code>delete</code> et (bellek sızıntısı olmasın).</li>
+</ul>
+<h4>Dizi vs bağlı liste (Lecture 3)</h4>
+<table class="tbl">
+<tr><th></th><th>Dizi</th><th>Bağlı liste</th></tr>
+<tr><td>Boyut</td><td>Sabit</td><td>Dinamik</td></tr>
+<tr><td>i. elemana erişim</td><td>O(1)</td><td>O(i) — baştan yürümek gerekir</td></tr>
+<tr><td>Bellek</td><td>Boş yer israf olabilir</td><td>Her düğümde ek pointer</td></tr>
+<tr><td>Başa ekleme/silme</td><td>O(N) kaydırma</td><td>O(1)</td></tr>
+</table>
+<p><b>Shallow copy</b> sadece pointer’ı kopyalar (iki liste aynı düğümleri paylaşır); <b>deep copy</b> tüm düğümleri yeniden oluşturur.</p>
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li><code>cur-&gt;next</code>’e erişmeden önce <code>cur != nullptr</code> kontrolü; boş liste (<code>headPtr == nullptr</code>) kenar durumu.</li>
+<li><b>Kayıp düğüm</b> (Figure 4-5): bağlantıyı değiştirmeden önce sonraki düğümün adresini saklayın.</li>
+<li>Lecture 4’teki <code>add</code> kodunda baştaki elemana <b>eşit</b> bir değer eklenince <code>prev</code> nullptr kalır ve program çöker; baş kontrolünü <code>&gt;=</code> yapmak düzeltir.</li>
+<li>Fonksiyon <code>Node* headPtr</code>’ı değerle alıyorsa baş düğümü değiştiremezsiniz; bubble sort’ta düğümleri değil <b>item’ları</b> takas edin.</li>
+</ul>

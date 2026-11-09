@@ -1,0 +1,31 @@
+{
+  "id": "sort-trace-2020",
+  "order": 7,
+  "type": "sorttrace",
+  "title": "Midterm 2020 — üç algoritma ile izleme",
+  "source": "Midterm2020",
+  "difficulty": "Orta",
+  "statement": "<p>Aşağıdaki dizinin her adımdaki içeriğini yazın: (a) selection sort (maksimumu seçen), (b) insertion sort, (c) quick sort (son eleman pivot). Üçünü de tamamlayın. (Sınavda süre: 30 dk)</p>",
+  "algos": [
+    "selection",
+    "insertion",
+    "quick"
+  ],
+  "arrays": [
+    [
+      38,
+      22,
+      81,
+      13,
+      46,
+      41,
+      75,
+      69,
+      44,
+      59,
+      80,
+      63
+    ]
+  ],
+  "random": false
+}

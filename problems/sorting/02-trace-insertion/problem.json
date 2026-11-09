@@ -1,0 +1,52 @@
+{
+  "id": "sort-trace-insertion",
+  "order": 2,
+  "type": "sorttrace",
+  "title": "İzleme: Insertion sort",
+  "source": "Study 9 · Midterm2019/2020",
+  "difficulty": "Orta",
+  "statement": "<p>Dizinin her adımdan sonraki halini kutulara yazın, sonra <b>Kontrol et</b>’e basın. Hazır dizilerden birini seçin ya da rastgele dizi üretin.</p>",
+  "algos": [
+    "insertion"
+  ],
+  "arrays": [
+    [
+      7,
+      2,
+      12,
+      5,
+      6,
+      4,
+      9
+    ],
+    [
+      38,
+      81,
+      22,
+      48,
+      13,
+      69,
+      75,
+      41,
+      45,
+      58,
+      79,
+      60
+    ],
+    [
+      38,
+      22,
+      81,
+      13,
+      46,
+      41,
+      75,
+      69,
+      44,
+      59,
+      80,
+      63
+    ]
+  ],
+  "random": true
+}

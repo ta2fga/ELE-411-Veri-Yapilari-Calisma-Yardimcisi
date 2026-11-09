@@ -1,0 +1,28 @@
+{
+  "id": "sort-merge",
+  "order": 13,
+  "title": "Merge sort yaz",
+  "source": "Lecture 6",
+  "difficulty": "Orta",
+  "statement": "<p>Merge sort’u yazın: diziyi ortadan ikiye bölün, iki yarıyı recursive sıralayın ve geçici bir dizi kullanarak birleştirin. <code>mergeSort(arr, 0, n−1)</code> şeklinde çağrılır.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>first</code>, <code>last</code>: sıralanacak aralık"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde artan sıraya dizilir"
+    ]
+  },
+  "signature": "void mergeSort(int arr[], int first, int last)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "Base case: first >= last.",
+    "mid = (first + last) / 2; mergeSort(first, mid); mergeSort(mid+1, last); merge(first, mid, last).",
+    "merge: geçici dizi (new int[last−first+1]) ile iki sıralı yarıyı birleştir, sonra arr’a geri kopyala."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> her durumda O(NlogN); birleştirme için O(N) ek bellek."
+}

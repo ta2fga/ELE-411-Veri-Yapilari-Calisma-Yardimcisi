@@ -1,0 +1,31 @@
+{
+  "id": "sort-trace-2019",
+  "order": 6,
+  "type": "sorttrace",
+  "title": "Midterm 2019 Q5 — üç algoritma ile izleme",
+  "source": "Midterm2019 Q5",
+  "difficulty": "Orta",
+  "statement": "<p>Aşağıdaki dizinin her adımdaki içeriğini yazın: (a) selection sort (maksimumu seçen), (b) insertion sort, (c) quick sort (son eleman pivot). Üçünü de tamamlayın. (15 puan)</p>",
+  "algos": [
+    "selection",
+    "insertion",
+    "quick"
+  ],
+  "arrays": [
+    [
+      38,
+      81,
+      22,
+      48,
+      13,
+      69,
+      75,
+      41,
+      45,
+      58,
+      79,
+      60
+    ]
+  ],
+  "random": false
+}

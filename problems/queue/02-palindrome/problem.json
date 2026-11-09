@@ -1,0 +1,26 @@
+{
+  "id": "q-palindrome",
+  "order": 2,
+  "title": "Stack + queue ile palindrom",
+  "source": "Study 12 · sd.pdf (düzeltilmiş)",
+  "difficulty": "Kolay",
+  "statement": "<p>Verilen string’in palindrom olup olmadığını bulan fonksiyonu yazın. Stack ve queue kullanabilirsiniz ama <b>dizi veya başka veri yapısı kullanamazsınız</b> (büyük/küçük harf duyarlı).</p><p class=\"muted\">sd.pdf’teki çözüm char dizisi + recursion kullanıyor; soru ise stack + queue istiyor (Lecture 5, Figure 13-3).</p>",
+  "io": {
+    "inputs": [
+      "<code>str</code>: string"
+    ],
+    "outputs": [
+      "Palindromsa <code>true</code>"
+    ]
+  },
+  "signature": "bool isPalindrome(string str)",
+  "forbidden": [
+    "array",
+    "stl"
+  ],
+  "hints": [
+    "Her karakteri hem Stack’e push, hem Queue’ya enqueue edin (char → int).",
+    "Stack üstten tersini, queue önden düzünü verir: peek() ile peekFront() farklıysa false; aynıysa ikisinden de çıkarın."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, O(N) bellek."
+}

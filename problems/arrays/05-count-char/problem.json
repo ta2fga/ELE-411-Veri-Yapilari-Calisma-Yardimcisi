@@ -1,0 +1,22 @@
+{
+  "id": "arr-count-char",
+  "order": 5,
+  "title": "String'de bir karakterin geçiş sayısı",
+  "source": "Study 10",
+  "difficulty": "Kolay",
+  "statement": "<p>Bir string’de verilen karakterin kaç kez geçtiğini sayan fonksiyonu yazın (büyük/küçük harf duyarlı).</p>",
+  "io": {
+    "inputs": [
+      "<code>s</code>: string",
+      "<code>c</code>: karakter"
+    ],
+    "outputs": [
+      "Geçiş sayısı"
+    ]
+  },
+  "signature": "int countChar(string s, char c)",
+  "hints": [
+    "for (int i = 0; i < (int)s.length(); i++) if (s[i] == c) count++;"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N)."
+}

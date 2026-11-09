@@ -1,0 +1,20 @@
+{
+  "id": "stack-infix-postfix",
+  "order": 7,
+  "title": "Infix → postfix dönüşümü",
+  "source": "Lecture 5 – Stacks",
+  "difficulty": "Zor",
+  "statement": "<p>Infix bir ifadeyi Stack kullanarak postfix'e çeviren fonksiyonu yazın. Operandlar <b>tek harf veya tek rakamdır</b>; operatörler <code>+ - * /</code> (çarpma/bölme önce, hepsi soldan birleşimli) ve parantezler <code>( )</code>. Girdideki boşluklar yok sayılır; çıktıda boşluk olmasın.</p><p>Ders örneği (Figure 6-5): <code>a - (b + c * d) / e</code> → <code>abcd*+e/-</code></p><p>Önemli gerçekler (Lecture 5): operandlar birbirine göre sırasını korur; operatörler sadece “sağa” kayar; tüm parantezler kaldırılır.</p>",
+  "io": {
+    "inputs": ["<code>infix</code>: string (ör. <code>\"(a+b)*c\"</code>)"],
+    "outputs": ["Postfix string (ör. <code>\"ab+c*\"</code>)"]
+  },
+  "signature": "string infixToPostfix(string infix)",
+  "forbidden": ["stl"],
+  "hints": [
+    "Operand → hemen çıktıya ekle. '(' → push. ')' → '(' görene kadar pop edip çıktıya ekle, sonra '(' yi at.",
+    "Operatör → stack boş olmadıkça, üst '(' olmadıkça ve öncelik(üst) >= öncelik(yeni) oldukça pop edip çıktıya ekle; sonra yeni operatörü push et.",
+    ">= (büyük-eşit) soldan birleşmeyi sağlar: a-b-c → ab-c-. Sadece > yazarsanız abc-- çıkar (yanlış). Sonunda stack'te kalanları çıktıya ekleyin."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman: her karakter en fazla bir kez push, bir kez pop edilir. O(N) bellek."
+}

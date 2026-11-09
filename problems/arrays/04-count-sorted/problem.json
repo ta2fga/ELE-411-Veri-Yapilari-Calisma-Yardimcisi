@@ -1,0 +1,28 @@
+{
+  "id": "arr-count-sorted",
+  "order": 4,
+  "title": "Sıralı dizide hedefin kaç kez geçtiği — O(logN)",
+  "source": "Study 4 · midterm.pdf",
+  "difficulty": "Orta",
+  "statement": "<p>Sıralı bir int dizisinde hedef elemanın kaç kez geçtiğini <b>olabildiğince verimli</b> (&lt; O(N)) bulan fonksiyonu yazın. Algoritmanızın zaman karmaşıklığını hesaplayın.</p><p>Son test 10 milyon elemanlı dizide 2000 sorgu yapar; lineer tarama 5 saniyede bitmez, O(logN) çözüm milisaniyeler sürer.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: sıralı int dizisi",
+      "<code>N</code>: uzunluk",
+      "<code>target</code>: hedef"
+    ],
+    "outputs": [
+      "Hedefin geçiş sayısı (int)"
+    ]
+  },
+  "signature": "int countOccurrences(int arr[], int N, int target)",
+  "forbidden": [
+    "stl"
+  ],
+  "hints": [
+    "Hedef sıralı dizide yan yana bir blok halindedir. Bloğun ilk ve son indeksini bulmanız yeterli.",
+    "Binary search’ü değiştirin: arr[mid] == target olunca durmayın; ilk geçiş için sola (last = mid − 1), son geçiş için sağa (first = mid + 1) devam edin.",
+    "Sonuç = son − ilk + 1 (bulunamadıysa 0)."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> iki binary search → 2·O(logN) = <b>O(logN)</b>. Bulup iki yana lineer yürümek, hedef çok tekrarlıysa O(N)’e düşer."
+}

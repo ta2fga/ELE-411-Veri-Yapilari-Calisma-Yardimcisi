@@ -1,0 +1,25 @@
+{
+  "id": "rec-write-backward",
+  "order": 4,
+  "title": "String'i tersten yazdır",
+  "source": "Study 5 · Lecture 1",
+  "difficulty": "Kolay",
+  "statement": "<p>Bir string’in karakterlerini <b>ters sırada</b> ekrana yazdıran fonksiyonu recursive olarak yazın (Lecture 1: <code>writeBackward</code>). Sona satır sonu eklemeniz gerekmez.</p>",
+  "io": {
+    "inputs": [
+      "<code>s</code>: string"
+    ],
+    "outputs": [
+      "Yok; karakterler tersten ekrana yazılır (ör. \"cat\" → tac)"
+    ]
+  },
+  "signature": "void writeBackward(string s)",
+  "forbidden": [
+    "noloop"
+  ],
+  "hints": [
+    "Base case: boş string → hiçbir şey yazma.",
+    "Son karakteri yaz: s[s.length()-1]; sonra writeBackward(s.substr(0, s.length()-1))."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> N çağrı yapılır, O(N) zaman (substr kopyaları sayılırsa O(N²)). Alternatif: önce writeBackward(s.substr(1)), sonra s[0]’ı yaz."
+}

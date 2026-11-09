@@ -1,0 +1,26 @@
+<p><b>Recursion</b>: problemi, <b>aynı türden daha küçük</b> problemlere bölerek çözen ve kendini çağıran fonksiyon. (Lecture 1 – Recursion, Bölüm 2 “The Mirrors”)</p>
+<h4>Recursive çözüm kurarken 4 soru (Lecture 1)</h4>
+<ol>
+<li>Problemi aynı türden daha küçük bir problem cinsinden nasıl tanımlarım?</li>
+<li>Her recursive çağrı problemi nasıl küçültüyor?</li>
+<li>Hangi örnek <b>base case</b> olabilir?</li>
+<li>Problem küçüldükçe base case’e mutlaka ulaşılıyor mu?</li>
+</ol>
+<h4>Ders örnekleri</h4>
+<table class="tbl">
+<tr><th>Fonksiyon</th><th>Base case</th><th>Recursive adım</th><th>Karmaşıklık</th></tr>
+<tr><td><code>factorial(n)</code></td><td>n = 0 → 1</td><td>n · factorial(n−1)</td><td>O(N)</td></tr>
+<tr><td><code>myMult(a, b)</code></td><td>a = 1 → b</td><td>b + myMult(a−1, b)</td><td>O(a)</td></tr>
+<tr><td><code>writeBackward(s)</code></td><td>boş string → hiçbir şey</td><td>son karakteri yaz, kalanını tersten yaz</td><td>O(N)</td></tr>
+<tr><td><code>hanoi(n, A, C, B)</code></td><td>n = 1 → tek hamle</td><td>n−1 diski yardımcıya, en büyüğü hedefe, n−1’i hedefe</td><td>2ⁿ − 1 hamle → O(2ᴺ)</td></tr>
+</table>
+<p><b>Box trace</b>: her çağrı için bir kutu çizip parametreleri ve dönüş değerini yazın; dönüşler ters sırada (en içten dışa) hesaplanır.</p>
+<p><b>Backtracking</b>: bir tahminde bulun, çıkmaza girince geri dönüp başka yol deneyin (uçuş haritasında rota arama).</p>
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li>Base case yoksa ya da ulaşılamıyorsa → sonsuz recursion → <b>stack overflow</b> (ör. negatif sayı verilince <code>y−1</code> hiç 0 olmaz).</li>
+<li>Recursive çağrının sonucunu kullanmayı unutmak: <code>return b + myMult(a−1, b);</code> yerine sadece <code>myMult(a−1, b);</code></li>
+<li>Bağlı listeyi tersten yazdırırken: önce recursive çağrı, <b>sonra</b> yazdırma (sıra önemli).</li>
+<li>Ağaçta boş alt ağaç için (<code>root == nullptr</code>) 0 döndürmeyi unutmayın.</li>
+<li>“Basit, verimli iteratif çözüm varsa recursion kullanma” (fonksiyon çağrısı ek yük getirir).</li>
+</ul>

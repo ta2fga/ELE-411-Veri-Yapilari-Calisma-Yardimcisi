@@ -1,0 +1,28 @@
+{
+  "id": "sort-quick",
+  "order": 12,
+  "title": "Quick sort yaz (son eleman pivot)",
+  "source": "Lecture 6 · Midterm",
+  "difficulty": "Orta",
+  "statement": "<p>Quick sort’u yazın. Pivot olarak alt dizinin <b>son</b> elemanını kullanın (Lomuto bölümleme): pivottan küçük/eşitleri sola toplayın, sonra pivotu kesin yerine koyun ve iki tarafı recursive sıralayın. <code>quickSort(arr, 0, n−1)</code> şeklinde çağrılır.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>first</code>, <code>last</code>: sıralanacak aralık"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde artan sıraya dizilir"
+    ]
+  },
+  "signature": "void quickSort(int arr[], int first, int last)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "Base case: first >= last ise dön.",
+    "pivot = arr[last]; i = first − 1; for j = first..last−1: arr[j] <= pivot ise i++, takas(arr[i], arr[j]).",
+    "takas(arr[i+1], arr[last]); p = i+1; quickSort(first, p−1); quickSort(p+1, last)."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> ortalama O(NlogN), en kötü O(N²) (ör. zaten sıralı dizi + son eleman pivot). Bölümleme O(N)."
+}

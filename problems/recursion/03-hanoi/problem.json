@@ -1,0 +1,26 @@
+{
+  "id": "rec-hanoi",
+  "order": 3,
+  "title": "Hanoi Kuleleri (hamleleri yazdır)",
+  "source": "Lecture 1",
+  "difficulty": "Orta",
+  "statement": "<p><code>n</code> diski <code>source</code> çubuğundan <code>destination</code> çubuğuna, <code>auxiliary</code> çubuğunu kullanarak taşıyan hamleleri yazdırın. Her hamle ayrı satırda, tam olarak şu biçimde olmalı:</p><pre class=\"snippet\">Move the top disk from A to C</pre><p>n = 3 için 7 hamle (genel: 2ⁿ − 1).</p>",
+  "io": {
+    "inputs": [
+      "<code>n</code>: disk sayısı (n ≥ 1)",
+      "<code>source, destination, auxiliary</code>: çubuk adları (char)"
+    ],
+    "outputs": [
+      "Yok; hamleler ekrana yazılır"
+    ]
+  },
+  "signature": "void hanoi(int n, char source, char destination, char auxiliary)",
+  "forbidden": [
+    "noloop"
+  ],
+  "hints": [
+    "n == 1 ise tek hamle yazdırıp dönün.",
+    "Önce n−1 diski source → auxiliary (hedef yardımcı olur), sonra en büyük diski source → destination, sonra n−1 diski auxiliary → destination."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> T(n) = 2T(n−1) + 1 → 2ⁿ − 1 hamle → <b>O(2ᴺ)</b>."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "sort-selection",
+  "order": 9,
+  "title": "Selection sort yaz (maksimumu seçen)",
+  "source": "Lecture 6 · Midterm",
+  "difficulty": "Kolay",
+  "statement": "<p>Sınavdaki sürümü yazın: her geçişte sıralanmamış kısımdaki <b>en büyük</b> elemanı bulun ve kısmın <b>son</b> elemanıyla takas edin.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>n</code>: uzunluk"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde artan sıraya dizilir"
+    ]
+  },
+  "signature": "void selectionSort(int arr[], int n)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "for (last = n − 1; last ≥ 1; last--): arr[0..last] içinde en büyüğün indeksini bul.",
+    "arr[largest] ile arr[last]’ı takas et."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> her durumda O(N²) karşılaştırma, O(N) takas."
+}

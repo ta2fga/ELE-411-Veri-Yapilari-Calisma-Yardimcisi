@@ -1,0 +1,27 @@
+{
+  "id": "sort-insertion",
+  "order": 10,
+  "title": "Insertion sort yaz",
+  "source": "Lecture 6",
+  "difficulty": "Kolay",
+  "statement": "<p>Insertion sort’u yazın: <code>arr[0..i−1]</code> sıralıyken <code>arr[i]</code>’yi büyükleri sağa kaydırarak doğru yerine yerleştirin.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>n</code>: uzunluk"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde artan sıraya dizilir"
+    ]
+  },
+  "signature": "void insertionSort(int arr[], int n)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "for (unsorted = 1; unsorted < n; unsorted++): nextItem = arr[unsorted].",
+    "loc = unsorted; while (loc > 0 && arr[loc−1] > nextItem) { arr[loc] = arr[loc−1]; loc--; } arr[loc] = nextItem;"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> en kötü O(N²), en iyi (sıralı) O(N)."
+}

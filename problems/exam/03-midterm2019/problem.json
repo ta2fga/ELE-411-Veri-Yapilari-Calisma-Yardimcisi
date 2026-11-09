@@ -1,0 +1,43 @@
+{
+  "id": "exam-2019",
+  "order": 3,
+  "type": "exam",
+  "title": "Midterm 2019 (zamanlayıcılı)",
+  "source": "Midterm2019",
+  "difficulty": "120 dk",
+  "statement": "<p>Midterm 2019’un sekiz sorusu; süreler puanlarla orantılı (toplam 100 puan, 120 dk).</p>",
+  "sections": [
+    {
+      "problem": "rec-trace-2019q1",
+      "minutes": 10
+    },
+    {
+      "problem": "rec-reverse-list",
+      "minutes": 12
+    },
+    {
+      "problem": "q-trace-2019q3",
+      "minutes": 8
+    },
+    {
+      "problem": "bigo-2019q4",
+      "minutes": 14
+    },
+    {
+      "problem": "sort-trace-2019",
+      "minutes": 18
+    },
+    {
+      "problem": "stack-remove-all",
+      "minutes": 16
+    },
+    {
+      "problem": "sort-cocktail",
+      "minutes": 24
+    },
+    {
+      "problem": "arr-binary-sort",
+      "minutes": 18
+    }
+  ]
+}

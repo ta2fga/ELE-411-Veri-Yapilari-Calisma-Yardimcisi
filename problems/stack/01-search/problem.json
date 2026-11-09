@@ -1,0 +1,20 @@
+{
+  "id": "stack-search",
+  "order": 1,
+  "title": "Stack'te hedef arama (sırayı koru)",
+  "source": "midterm.pdf",
+  "difficulty": "Orta",
+  "statement": "<p>Bir int stack'inde hedef elemanın bulunup bulunmadığını arayan fonksiyonu yazın. Fonksiyondan çıkarken stack'teki elemanların <b>sırası korunmalıdır</b>. Dizi, queue veya başka veri yapısı kullanamazsınız; <b>sadece bir yardımcı stack</b> kullanabilirsiniz.</p>",
+  "io": {
+    "inputs": ["<code>myStack</code>: int stack'i", "<code>targetItem</code>: aranacak tamsayı"],
+    "outputs": ["<code>result</code>: arama başarılıysa <code>true</code>, değilse <code>false</code>"]
+  },
+  "signature": "bool searchStack(Stack& myStack, int targetItem)",
+  "forbidden": ["array", "stl", "queue"],
+  "hints": [
+    "pop() değer döndürmez. Elemanı görmek için önce peek(), sonra pop().",
+    "Bakılan her elemanı yardımcı bir Stack temp'e push edin. Hedefi bulunca döngüden çıkın (break), ama hemen return etmeyin!",
+    "Döngüden sonra temp boşalana kadar elemanları myStack'e geri push edin; böylece sıra ilk haline döner. En son found değerini döndürün."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman (en kötü durumda tüm elemanlar temp'e gidip geri gelir), O(N) ek bellek (yardımcı stack). Hedef bulununca durmak ortalama durumu iyileştirir ama en kötü durum yine O(N)."
+}

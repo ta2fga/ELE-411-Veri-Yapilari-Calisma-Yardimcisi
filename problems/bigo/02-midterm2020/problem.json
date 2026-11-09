@@ -1,0 +1,50 @@
+{
+  "id": "bigo-2020",
+  "order": 2,
+  "type": "mcq",
+  "title": "Big-O — Midterm 2020",
+  "source": "Midterm2020",
+  "difficulty": "Orta",
+  "statement": "<p>Aşağıdakilerin <b>en kötü durum</b> çalışma süresini N cinsinden Big-O ile seçin. Şıklar tekrar kullanılabilir. (Sınavda süre: 15 dk; PDF’te (d) şıkkı yok.)</p>",
+  "options": [
+    "O(1)",
+    "O(logN)",
+    "O(N)",
+    "O(NlogN)",
+    "O(N²)",
+    "O(N²logN)",
+    "O(N³)",
+    "O(N³logN)",
+    "O(N⁴)",
+    "O(2ᴺ)"
+  ],
+  "items": [
+    {
+      "q": "a) Sırasız bir dizideki tüm elemanları toplama",
+      "answer": "O(N)",
+      "explain": "Her eleman bir kez toplanır."
+    },
+    {
+      "q": "b) Sıralı bir bağlı listede belirli bir indeksteki elemana erişim",
+      "answer": "O(N)",
+      "explain": "Bağlı listede i. düğüme ulaşmak için baştan i adım yürümek gerekir; sıralı olması fark etmez."
+    },
+    {
+      "q": "c) Sıralı bir dizide binary search ile arama",
+      "answer": "O(logN)",
+      "explain": "Her karşılaştırmada arama aralığı yarıya iner: en fazla ⌊log₂N⌋ + 1 karşılaştırma."
+    },
+    {
+      "q": "e)",
+      "code": "int a = 0, i = N;\nwhile (i > 0) {\n    a += i;\n    i /= 2;\n}",
+      "answer": "O(logN)",
+      "explain": "i her adımda yarıya iner: N, N/2, N/4, … 1 → yaklaşık log₂N + 1 adım."
+    },
+    {
+      "q": "f)",
+      "code": "int a = 0;\nfor (i = 0; i < N; i++) {\n    for (j = N; j > i; j--) {\n        a = a + i + j;\n    }\n}",
+      "answer": "O(N²)",
+      "explain": "İç döngü N − i kez döner: N + (N−1) + … + 1 = N(N+1)/2 → O(N²)."
+    }
+  ]
+}

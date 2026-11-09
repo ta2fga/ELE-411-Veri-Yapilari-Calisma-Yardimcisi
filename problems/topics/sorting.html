@@ -1,0 +1,33 @@
+<p>Sıralama: veriyi artan/azalan sıraya koymak. <b>Internal sort</b>: veri belleğe sığar; <b>external sort</b>: ikincil bellekte. (Lecture 6 – Sorting, Bölüm 11)</p>
+<h4>Algoritmalar (sınavdaki sürümler)</h4>
+<ul>
+<li><b>Selection sort (maksimumu seçen)</b>: her geçişte sıralanmamış kısmın <b>en büyüğünü</b> bulup kısmın <b>son</b> elemanıyla takas eder. N−1 geçiş. Veri taşıma pahalı, karşılaştırma ucuzsa iyi seçim.</li>
+<li><b>Bubble sort</b>: komşuları karşılaştırıp yanlış sıradaysa takas eder; her geçişte en büyük sona “kabarcıklanır”. Takas olmayan geçişte durulabilir.</li>
+<li><b>Insertion sort</b>: dizi sıralı + sırasız iki bölge; sıradaki elemanı sıralı bölgede doğru yerine kaydırarak ekler. Küçük (n &lt; 25) veya neredeyse sıralı dizilerde iyi.</li>
+<li><b>Merge sort</b>: diziyi ikiye böl, iki yarıyı recursive sırala, geçici dizi ile <b>birleştir</b>. Her seviye O(N), log₂N seviye.</li>
+<li><b>Quick sort</b>: pivot seç (sınavda <b>son eleman</b>), bölümle: pivottan küçükler sola, büyükler sağa, pivot kesin yerine; iki tarafı recursive sırala. Bölümleme O(N).</li>
+<li><b>Radix sort</b>: karşılaştırma yapmaz; basamaklara göre gruplar (en önemsiz basamaktan başlayarak), d basamak için 2·N·d taşıma → O(N).</li>
+</ul>
+<h4>Karmaşıklık tablosu</h4>
+<table class="tbl">
+<tr><th>Algoritma</th><th>En iyi</th><th>Ortalama</th><th>En kötü</th><th>Not</th></tr>
+<tr><td>Selection</td><td>O(N²)</td><td>O(N²)</td><td>O(N²)</td><td>Her zaman N(N−1)/2 karşılaştırma, en fazla N−1 takas</td></tr>
+<tr><td>Bubble</td><td>O(N)</td><td>O(N²)</td><td>O(N²)</td><td>En iyi durum: zaten sıralı + erken durma</td></tr>
+<tr><td>Insertion</td><td>O(N)</td><td>O(N²)</td><td>O(N²)</td><td>Zaten sıralıysa O(N)</td></tr>
+<tr><td>Merge</td><td>O(NlogN)</td><td>O(NlogN)</td><td>O(NlogN)</td><td>Ek O(N) geçici dizi</td></tr>
+<tr><td>Quick</td><td>O(NlogN)</td><td>O(NlogN)</td><td>O(N²)</td><td>En kötü: sıralı dizi + son eleman pivot</td></tr>
+<tr><td>Radix</td><td>O(N)</td><td>O(N)</td><td>O(N)</td><td>d basamak sabit kabul; bağlı listelerle uygun</td></tr>
+</table>
+<h4>İzleme (trace) kuralları — bu sitedeki araçlar da böyle sayar</h4>
+<ul>
+<li>Selection: her geçişten sonra dizi (N−1 adım). Insertion: her eleman yerleştikten sonra (N−1 adım).</li>
+<li>Bubble: takas yapılan her geçişten sonra; takas olmayan geçişte durulur (o geçiş yazılmaz).</li>
+<li>Quick (Lomuto, son eleman pivot): uzunluğu ≥ 2 olan her bölümlemeden sonra; önce sol, sonra sağ parça.</li>
+<li>Merge: her birleştirmeden sonra; orta = ⌊(first + last) / 2⌋, önce sol yarı.</li>
+</ul>
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li>Sınavdaki selection sort <b>maksimumu</b> seçip sona koyar; minimumu başa koyan sürümle karıştırmayın.</li>
+<li>Quick sort’ta pivot <b>son eleman</b>; bölümlemeden sonra pivot kesin yerine oturur.</li>
+<li>Merge sort’un ek bellek ihtiyacı vardır; quick sort’un en kötü durumu O(N²).</li>
+</ul>

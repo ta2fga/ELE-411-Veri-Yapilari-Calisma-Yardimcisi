@@ -1,0 +1,23 @@
+<p><b>Queue (kuyruk)</b>: <b>FIFO</b> (First-In, First-Out) — bekleme sırası gibi: yeni gelen <b>arkaya</b> eklenir, eleman <b>önden</b> çıkar. (Lecture 5 – Queues, Bölüm 13)</p>
+<h4>UML</h4>
+<table class="tbl">
+<tr><th>Metot</th><th>Ne yapar</th><th>Karmaşıklık</th></tr>
+<tr><td><code>isEmpty(): bool</code></td><td>Boşsa true</td><td>O(1)</td></tr>
+<tr><td><code>enqueue(item): bool</code></td><td>Arkaya ekler</td><td>O(1)</td></tr>
+<tr><td><code>dequeue(): bool</code></td><td>Öndekini siler — <b>değer döndürmez</b></td><td>O(1)</td></tr>
+<tr><td><code>peekFront(): int</code></td><td>Öndekini döndürür (silmez)</td><td>O(1)</td></tr>
+</table>
+<p>Stack ↔ Queue karşılığı: <code>pop</code> ↔ <code>dequeue</code>, <code>peek</code> ↔ <code>peekFront</code>. Stack, list ve queue <b>konum odaklı</b> (position-oriented) ADT’lerdir; sıralı liste <b>değer odaklıdır</b>.</p>
+<h4>Önemli kalıplar</h4>
+<ul>
+<li><b>Sırayı koru</b>: elemanları yardımcı bir <b>queue</b>’ya aktarıp geri aktarmak sırayı bozmaz (FIFO → FIFO). Yardımcı <b>stack</b> kullanırsanız sıra ters döner!</li>
+<li><b>Queue → Stack → Queue</b>: queue’yu ters çevirir (Midterm2020 testFunction).</li>
+<li><b>Palindrom</b> (Figure 13-3): karakterleri hem stack’e hem queue’ya ekle; stack’in üstü ile queue’nun önünü karşılaştırarak çıkar. Hepsi eşitse palindrom.</li>
+<li><b>Priority queue</b>: en yüksek öncelikli eleman önce çıkar (yapılacaklar listesi). <b>Simülasyon</b>: banka kuyruğu, olay listesi (event-driven).</li>
+</ul>
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li><code>dequeue()</code> değer döndürmez: önce <code>peekFront()</code>, sonra <code>dequeue()</code>.</li>
+<li>Fonksiyona <b>değerle</b> geçirilen queue (<code>void f(Queue Q)</code>) bir kopyadır; içerideki değişiklik çağırandaki queue’yu etkilemez.</li>
+<li>Boş queue’da <code>peekFront()</code> çağırmayın (minimum ararken başlangıç değeri için önce boş mu kontrol edin).</li>
+</ul>

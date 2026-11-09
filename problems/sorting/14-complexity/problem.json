@@ -1,0 +1,68 @@
+{
+  "id": "sort-complexity",
+  "order": 14,
+  "type": "mcq",
+  "title": "Sıralama karmaşıklıkları (en iyi / ortalama / en kötü)",
+  "source": "Lecture 6",
+  "difficulty": "Orta",
+  "statement": "<p>Aşağıdaki karmaşıklıkları seçin.</p>",
+  "options": [
+    "O(1)",
+    "O(logN)",
+    "O(N)",
+    "O(NlogN)",
+    "O(N²)",
+    "O(N²logN)",
+    "O(N³)",
+    "O(N³logN)",
+    "O(N⁴)",
+    "O(2ᴺ)"
+  ],
+  "items": [
+    {
+      "q": "Selection sort — en iyi durum",
+      "answer": "O(N²)",
+      "explain": "Dizi sıralı olsa da her geçişte kalan tüm elemanlara bakılır: N(N−1)/2 karşılaştırma."
+    },
+    {
+      "q": "Bubble sort (erken durmalı) — en iyi durum",
+      "answer": "O(N)",
+      "explain": "Zaten sıralıysa tek geçişte takas olmaz ve durur."
+    },
+    {
+      "q": "Insertion sort — en iyi durum",
+      "answer": "O(N)",
+      "explain": "Sıralıysa her eleman tek karşılaştırmayla yerinde kalır."
+    },
+    {
+      "q": "Insertion sort — en kötü durum",
+      "answer": "O(N²)",
+      "explain": "Ters sıralıda her eleman en başa kadar kayar: 1 + 2 + … + (N−1)."
+    },
+    {
+      "q": "Merge sort — en kötü durum",
+      "answer": "O(NlogN)",
+      "explain": "log₂N seviye, her seviyede O(N) birleştirme."
+    },
+    {
+      "q": "Quick sort — ortalama durum",
+      "answer": "O(NlogN)",
+      "explain": "Pivot ortalama olarak diziyi dengeli böler: log₂N seviye × O(N) bölümleme."
+    },
+    {
+      "q": "Quick sort — en kötü durum",
+      "answer": "O(N²)",
+      "explain": "Pivot hep en büyük/en küçükse (ör. sıralı dizi + son eleman pivot) bölümler N−1 ve 0 boyutlu olur."
+    },
+    {
+      "q": "Radix sort (d basamaklı N sayı)",
+      "answer": "O(N)",
+      "explain": "2·N·d taşıma; d sabit kabul edilir → O(N). Karşılaştırma yapmaz."
+    },
+    {
+      "q": "Bir bölümleme (partition) işlemi",
+      "answer": "O(N)",
+      "explain": "Alt dizinin her elemanı pivotla bir kez karşılaştırılır."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "rec-reverse-list",
+  "order": 7,
+  "title": "Bağlı listeyi recursive tersten yazdır",
+  "source": "Midterm2019 Q2",
+  "difficulty": "Orta",
+  "statement": "<p>String tutan tek yönlü bir bağlı listenin içeriğini <b>ters sırada</b> yazdıran <b>recursive</b> bir fonksiyon yazın. Son düğüm <code>nullptr</code>’ı gösterir. Her öğeyi ayrı satıra yazdırın. (10 puan)</p><p class=\"muted\">Node UML: <code>getNext(): Node*</code>, <code>getItem(): string</code>. Burada string düğümün adı <code>StringNode</code>.</p>",
+  "io": {
+    "inputs": [
+      "<code>headPtr</code>: ilk düğümün pointer’ı (StringNode*)"
+    ],
+    "outputs": [
+      "Yok (void); içerik ekrana yazılır"
+    ]
+  },
+  "signature": "void printReverse(StringNode* headPtr)",
+  "forbidden": [
+    "noloop",
+    "array",
+    "stl"
+  ],
+  "hints": [
+    "Base case: headPtr == nullptr → return.",
+    "Önce printReverse(headPtr->getNext()), SONRA headPtr->getItem()’i yazdırın."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, O(N) çağrı yığını. Yazdırma ile recursive çağrının yeri değişirse liste düz yazdırılır."
+}

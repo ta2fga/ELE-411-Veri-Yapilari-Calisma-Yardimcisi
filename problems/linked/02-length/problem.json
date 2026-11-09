@@ -1,0 +1,26 @@
+{
+  "id": "ll-length",
+  "order": 2,
+  "title": "Bağlı listenin uzunluğu (iteratif ve recursive)",
+  "source": "Study 16",
+  "difficulty": "Kolay",
+  "statement": "<p>Tek yönlü bir bağlı listenin uzunluğunu hesaplayan <b>iki</b> fonksiyon yazın: biri döngüyle (iteratif), biri recursive.</p>",
+  "io": {
+    "inputs": [
+      "<code>head</code>: ilk düğüm"
+    ],
+    "outputs": [
+      "Düğüm sayısı"
+    ]
+  },
+  "signature": "int lengthIterative(Node* head);  int lengthRecursive(Node* head)",
+  "forbidden": [
+    "stl",
+    "array"
+  ],
+  "hints": [
+    "İteratif: sayaç + while döngüsü.",
+    "Recursive: head == nullptr ise 0; değilse 1 + lengthRecursive(head->next)."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> ikisi de O(N) zaman; recursive sürüm O(N) çağrı yığını kullanır."
+}

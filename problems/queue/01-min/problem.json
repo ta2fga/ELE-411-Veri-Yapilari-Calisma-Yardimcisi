@@ -1,0 +1,27 @@
+{
+  "id": "q-min",
+  "order": 1,
+  "title": "Queue'da minimum (sırayı koru)",
+  "source": "Study 13 · sd.pdf (düzeltilmiş)",
+  "difficulty": "Orta",
+  "statement": "<p>Bir queue’daki <b>minimum</b> değeri bulan fonksiyonu yazın. Başka bir queue ya da stack’ten yararlanabilirsiniz ama dizi veya başka veri yapısı kullanamazsınız. Algoritmanız queue’daki elemanların <b>orijinal sırasını korumalıdır</b>. Queue boş değildir.</p><p class=\"muted\">sd.pdf’teki çözüm yanlış soruyu çözüyor: <code>std::stack</code>’te <b>maksimumu</b> buluyor. Burada queue’da minimum isteniyor.</p>",
+  "io": {
+    "inputs": [
+      "<code>q</code>: boş olmayan int queue’su"
+    ],
+    "outputs": [
+      "Minimum değer; q aynı sırada kalmalı"
+    ]
+  },
+  "signature": "int findMin(Queue& q)",
+  "forbidden": [
+    "array",
+    "stl"
+  ],
+  "hints": [
+    "minVal = q.peekFront() ile başlayın.",
+    "Tüm elemanları peekFront + dequeue ile alıp minimumu güncelleyin ve yardımcı bir Queue’ya enqueue edin.",
+    "Sonra yardımcı queue’yu q’ya geri aktarın (queue → queue sırayı korur; stack kullansaydınız ters dönerdi)."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, O(N) ek bellek."
+}

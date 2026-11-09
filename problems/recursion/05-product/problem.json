@@ -1,0 +1,26 @@
+{
+  "id": "rec-product",
+  "order": 5,
+  "title": "Çarpma operatörü olmadan recursive çarpma",
+  "source": "Study 6 · sd.pdf Q1",
+  "difficulty": "Orta",
+  "statement": "<p>İki tamsayıyı çarpma/bölme operatörü <b>kullanmadan</b>, sadece toplama/çıkarma ve recursion ile çarpın. Sayılar <b>negatif olabilir</b>.</p><p class=\"muted\">sd.pdf’teki <code>product</code> çözümü y &lt; 0 olduğunda (ör. <code>product(3, -4)</code>) y hiç 0 olmadığı için sonsuz recursion’a girer. Referans çözüm bunu düzeltir.</p>",
+  "io": {
+    "inputs": [
+      "<code>num1</code>, <code>num2</code>: tamsayılar"
+    ],
+    "outputs": [
+      "<code>result</code>: num1 · num2"
+    ]
+  },
+  "signature": "int product(int x, int y)",
+  "forbidden": [
+    "noloop",
+    "multiply"
+  ],
+  "hints": [
+    "x · y = x + x · (y − 1); base case y == 0 → 0.",
+    "y negatifse: x · y = −(x · (−y)). Tekli eksi (−) çarpma değildir, serbest."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(|y|). Daha az çağrı için küçük olanı y yapın: <code>if (abs(x) &lt; abs(y)) return product(y, x);</code>"
+}

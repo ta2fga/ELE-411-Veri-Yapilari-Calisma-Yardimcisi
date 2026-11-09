@@ -1,0 +1,55 @@
+{
+  "id": "bigo-2019q4",
+  "order": 1,
+  "type": "mcq",
+  "title": "Big-O — Midterm 2019 Q4",
+  "source": "Midterm2019 Q4",
+  "difficulty": "Orta",
+  "statement": "<p>Aşağıdaki işlemlerin <b>en kötü durum</b> çalışma süresini N cinsinden Big-O ile seçin. Şıklar tekrar kullanılabilir. (12 puan)</p>",
+  "options": [
+    "O(1)",
+    "O(logN)",
+    "O(N)",
+    "O(NlogN)",
+    "O(N²)",
+    "O(N²logN)",
+    "O(N³)",
+    "O(N³logN)",
+    "O(N⁴)",
+    "O(2ᴺ)"
+  ],
+  "items": [
+    {
+      "q": "a) Sırasız bir int dizisinde hedef elemanı arama",
+      "answer": "O(N)",
+      "explain": "Sırasız dizide her elemana bakmak gerekebilir (lineer arama)."
+    },
+    {
+      "q": "b) Sırasız bir dizide belirli bir indeksteki elemana erişim",
+      "answer": "O(1)",
+      "explain": "Dizide arr[i] adres hesabıyla doğrudan erişilir."
+    },
+    {
+      "q": "c) Sıralı tek yönlü bağlı listede bir eleman arama",
+      "answer": "O(N)",
+      "explain": "Bağlı listede ortadaki düğüme O(1)’de gidilemez; binary search yapılamaz. Baştan yürümek gerekir."
+    },
+    {
+      "q": "d) Sıralı bir int dizisinde maksimumu bulma",
+      "answer": "O(1)",
+      "explain": "Maksimum dizinin son (artan sıralıysa) ya da ilk elemanıdır."
+    },
+    {
+      "q": "e)",
+      "code": "int myFunc(int n){\n    int count = 0;\n    for (int i = 0; i < n; i = i * 2) {\n        count++;\n    }\n    return count;\n}",
+      "answer": "O(logN)",
+      "explain": "<b>Tuzak:</b> i = 0 ile başladığı için i = i * 2 her zaman 0 kalır ve n &gt; 0 için döngü <b>hiç bitmez</b> (sonsuz döngü). Sorunun amaçladığı cevap (i = 1 ile başlasaydı) i’nin her adımda ikiye katlanmasıdır: log₂n adım → <b>O(logN)</b>. Sınavda bu durumu not olarak belirtmek iyi olur."
+    },
+    {
+      "q": "f)",
+      "code": "int myFunc(int n) {\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n; j++) {\n            count++;\n        }\n    }\n    return count;\n}",
+      "answer": "O(N²)",
+      "explain": "İç içe iki döngü, her biri n kez: n · n = n² adım."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "sort-bubble",
+  "order": 11,
+  "title": "Bubble sort yaz",
+  "source": "Lecture 6",
+  "difficulty": "Kolay",
+  "statement": "<p>Bubble sort’u yazın: komşuları karşılaştırıp yanlış sıradaysa takas edin; her geçişte en büyük sona gider. Takas yapılmayan bir geçişten sonra durun.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: int dizisi",
+      "<code>n</code>: uzunluk"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde artan sıraya dizilir"
+    ]
+  },
+  "signature": "void bubbleSort(int arr[], int n)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "sorted = false; pass = 1; while (!sorted && pass < n) { sorted = true; ... pass++; }",
+    "İç döngü: for (i = 0; i < n − pass; i++) if (arr[i] > arr[i+1]) { takas; sorted = false; }"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> en kötü O(N²), en iyi O(N) (sıralıysa tek geçiş)."
+}

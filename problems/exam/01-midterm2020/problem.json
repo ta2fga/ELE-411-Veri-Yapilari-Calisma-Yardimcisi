@@ -1,0 +1,35 @@
+{
+  "id": "exam-2020",
+  "order": 1,
+  "type": "exam",
+  "title": "Midterm 2020 (zamanlayıcılı)",
+  "source": "Midterm2020",
+  "difficulty": "130 dk",
+  "statement": "<p>Midterm 2020’nin altı bölümü, sınavdaki sürelerle.</p>",
+  "sections": [
+    {
+      "problem": "rec-explain-2020",
+      "minutes": 15
+    },
+    {
+      "problem": "q-trace-2020",
+      "minutes": 15
+    },
+    {
+      "problem": "sort-trace-2020",
+      "minutes": 30
+    },
+    {
+      "problem": "stack-count",
+      "minutes": 25
+    },
+    {
+      "problem": "ll-bubble",
+      "minutes": 30
+    },
+    {
+      "problem": "bigo-2020",
+      "minutes": 15
+    }
+  ]
+}

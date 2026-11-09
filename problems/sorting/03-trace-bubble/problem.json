@@ -1,0 +1,52 @@
+{
+  "id": "sort-trace-bubble",
+  "order": 3,
+  "type": "sorttrace",
+  "title": "İzleme: Bubble sort",
+  "source": "Study 9",
+  "difficulty": "Orta",
+  "statement": "<p>Dizinin her adımdan sonraki halini kutulara yazın, sonra <b>Kontrol et</b>’e basın. Hazır dizilerden birini seçin ya da rastgele dizi üretin.</p>",
+  "algos": [
+    "bubble"
+  ],
+  "arrays": [
+    [
+      7,
+      2,
+      12,
+      5,
+      6,
+      4,
+      9
+    ],
+    [
+      38,
+      81,
+      22,
+      48,
+      13,
+      69,
+      75,
+      41,
+      45,
+      58,
+      79,
+      60
+    ],
+    [
+      38,
+      22,
+      81,
+      13,
+      46,
+      41,
+      75,
+      69,
+      44,
+      59,
+      80,
+      63
+    ]
+  ],
+  "random": true
+}

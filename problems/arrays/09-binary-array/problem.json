@@ -1,0 +1,27 @@
+{
+  "id": "arr-binary-sort",
+  "order": 9,
+  "title": "0/1 dizisini O(N)'de sıralama",
+  "source": "Midterm2019 Q8",
+  "difficulty": "Kolay",
+  "statement": "<p>Sadece 0 ve 1 içeren bir diziyi <b>olabildiğince verimli</b> sıralayan fonksiyonu yazın. Zaman karmaşıklığını Big-O ile belirtin. (15 puan)</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: sadece 0/1 içeren int dizisi",
+      "<code>N</code>: uzunluk"
+    ],
+    "outputs": [
+      "Yok (void); dizi yerinde sıralanır"
+    ]
+  },
+  "signature": "void sortBinaryArray(int arr[], int N)",
+  "forbidden": [
+    "sort",
+    "stl"
+  ],
+  "hints": [
+    "Karşılaştırmalı sıralamaya gerek yok: 0’ları sayın.",
+    "İlk zeros elemana 0, kalanlara 1 yazın. (Alternatif: iki uçtan iki pointer ile takas.)"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman (iki geçiş), O(1) ek bellek. Karşılaştırmalı sıralamalar en iyi O(NlogN) olurdu."
+}

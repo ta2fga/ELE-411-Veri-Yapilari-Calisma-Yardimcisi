@@ -1,0 +1,20 @@
+{
+  "id": "stack-balanced",
+  "order": 5,
+  "title": "Dengeli parantez kontrolü",
+  "source": "Lecture 5 – Stacks",
+  "difficulty": "Kolay",
+  "statement": "<p>Verilen bir ifadedeki parantezlerin <b>dengeli</b> olup olmadığını Stack kullanarak kontrol eden fonksiyonu yazın. Derste sadece süslü parantez <code>{ }</code> vardı; burada üç türü de kontrol edin: <code>( )</code>, <code>[ ]</code>, <code>{ }</code>. Parantez dışındaki karakterler önemsizdir.</p><p>Kurallar (Lecture 5): her kapanış, daha önce görülmüş ve henüz eşleşmemiş <b>aynı türde</b> bir açılışla eşleşmeli; ifadenin sonunda eşleşmemiş açılış kalmamalı.</p>",
+  "io": {
+    "inputs": ["<code>expr</code>: string (ör. <code>\"a{b(c)d}e\"</code>)"],
+    "outputs": ["Dengeliyse <code>true</code>, değilse <code>false</code>"]
+  },
+  "signature": "bool isBalanced(string expr)",
+  "forbidden": ["stl"],
+  "hints": [
+    "Stack int tutar ama char da bir tamsayıdır: s.push('(') yazabilirsiniz; s.peek() == '(' ile karşılaştırabilirsiniz.",
+    "Açılış görünce push. Kapanış görünce: stack boşsa hemen false; üstteki aynı türün açılışı değilse false; eşleşiyorsa pop.",
+    "Döngü bittikten sonra stack boş değilse kapanmamış açılış vardır → false."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, en kötü durumda O(N) ek bellek (hepsi açılışsa). Sadece sayaç tutmak yetmez: <code>\"{(})\"</code> sayaçla dengeli görünür ama değildir."
+}

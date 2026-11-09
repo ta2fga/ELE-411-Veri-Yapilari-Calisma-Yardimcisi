@@ -1,0 +1,27 @@
+{
+  "id": "arr-missing-number",
+  "order": 7,
+  "title": "0..n arasındaki eksik sayı",
+  "source": "Study 14",
+  "difficulty": "Kolay",
+  "statement": "<p>Sırasız bir dizide 0’dan n’ye kadar olan sayılardan <b>sadece biri eksik</b> (dizide n eleman var). Eksik sayıyı olabildiğince verimli bulun.</p>",
+  "io": {
+    "inputs": [
+      "<code>arr</code>: n eleman (0..n’den biri eksik)",
+      "<code>n</code>: dizinin uzunluğu"
+    ],
+    "outputs": [
+      "Eksik sayı"
+    ]
+  },
+  "signature": "int findMissing(int arr[], int n)",
+  "forbidden": [
+    "stl",
+    "sort"
+  ],
+  "hints": [
+    "0 + 1 + … + n = n(n+1)/2.",
+    "Beklenen toplamdan dizinin toplamını çıkarın."
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> O(N) zaman, O(1) bellek. (Sıralayıp bakmak O(NlogN); XOR yöntemi de O(N) ve taşma yapmaz.)"
+}

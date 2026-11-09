@@ -1,0 +1,20 @@
+{
+  "id": "stack-reverse",
+  "order": 4,
+  "title": "Stack'i ters çevirme",
+  "source": "Study 7 · sd.pdf (düzeltilmiş)",
+  "difficulty": "Orta",
+  "statement": "<p>Bir stack'teki elemanların sırasını <b>tersine çeviren</b> fonksiyonu yazın. Başka bir stack ya da queue nesnesinden yararlanabilirsiniz ama <b>dizi veya başka veri yapısı kullanamazsınız</b>.</p><p class=\"muted\">sd.pdf'teki çözümde değişken adları karışık (<code>int st = st.top()</code>, tanımsız <code>x</code>), <code>insert_at_bottom(x)</code> eksik argümanla çağrılıyor ve stack <b>değerle</b> geçirildiği için değişiklik çağırana ulaşmıyor. Doğru hali referans çözümde.</p>",
+  "io": {
+    "inputs": ["<code>st</code>: int stack'i (referansla)"],
+    "outputs": ["Yok (<code>void</code>). <code>st</code> yerinde ters çevrilir: en üstteki en alta iner."]
+  },
+  "signature": "void reverseStack(Stack& st)",
+  "forbidden": ["array", "stl"],
+  "hints": [
+    "En kolay yol: tüm elemanları bir Queue'ya aktarın (peek + pop + enqueue), sonra queue'dan geri push edin. Neden ters çevrildiğini kâğıtta deneyin.",
+    "Sadece stack'lerle: st → t1, t1 → t2, t2 → st. Her döküş sırayı bir kez ters çevirir; üç döküş = ters.",
+    "Recursive yol (sd.pdf'in amacı): insertAtBottom(st, x): st boşsa x'i push et; değilse üsttekini al, insertAtBottom(st, x) çağır, aldığını geri push et. reverse(st): boş değilse üsttekini al, reverse(st), sonra insertAtBottom(st, x). Stack'i her yerde Stack& ile geçirin!"
+  ],
+  "solutionNote": "<b>Karmaşıklık:</b> Queue veya iki stack yöntemi O(N). Recursive insertAtBottom yöntemi O(N²) zaman (her ekleme O(N), N kez), O(N) çağrı yığını kullanır. Sınavda en güvenlisi Queue / iki stack yöntemidir."
+}

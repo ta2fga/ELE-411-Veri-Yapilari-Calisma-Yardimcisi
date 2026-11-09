@@ -1,0 +1,34 @@
+{
+  "id": "q-trace-2019q3",
+  "order": 3,
+  "type": "trace",
+  "title": "Stack ve queue çıktısı izleme",
+  "source": "Midterm2019 Q3",
+  "difficulty": "Kolay",
+  "statement": "<p>Aşağıdaki kodu değerlendirip ekrana yazdırdığı çıktıları yazın. (7 puan)</p>",
+  "code": "int main() {\n    Stack s;\n    Queue q;\n\n    s.push(1);\n    q.enqueue(1);\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n\n    s.push(2);\n    q.enqueue(2);\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n\n    s.push(3);\n    q.enqueue(3);\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n\n    s.pop();\n    q.dequeue();\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n\n    s.push(q.peekFront());\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n}",
+  "runCode": "int main() {\n    Stack s;\n    Queue q;\n    s.push(1);\n    q.enqueue(1);\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n    s.push(2);\n    q.enqueue(2);\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n    s.push(3);\n    q.enqueue(3);\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n    s.pop();\n    q.dequeue();\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n    s.push(q.peekFront());\n    cout << s.peek() << \" \" << q.peekFront() << endl;\n}",
+  "blanks": [
+    {
+      "label": "1. satır",
+      "answer": "1 1"
+    },
+    {
+      "label": "2. satır",
+      "answer": "2 1"
+    },
+    {
+      "label": "3. satır",
+      "answer": "3 1"
+    },
+    {
+      "label": "4. satır",
+      "answer": "2 2"
+    },
+    {
+      "label": "5. satır",
+      "answer": "2 2"
+    }
+  ],
+  "explanation": "<ul><li>Stack üstü en son push edilen, queue önü en ilk enqueue edilendir: 1 1 → 2 1 → 3 1.</li><li><code>s.pop()</code> 3’ü, <code>q.dequeue()</code> 1’i çıkarır: stack [1, 2] (üst 2), queue [2, 3] (ön 2) → <b>2 2</b>.</li><li><code>s.push(q.peekFront())</code> stack’e 2 ekler: üst 2, queue önü hâlâ 2 → <b>2 2</b>.</li></ul>"
+}

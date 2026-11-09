@@ -1,0 +1,42 @@
+<p><b>Stack (yığın)</b>: <b>LIFO</b> (Last-In, First-Out) — son eklenen eleman ilk çıkar. Kafeteryadaki tabak yığını gibi: sadece en üste eklenir, sadece en üstten alınır. (Lecture 5 – Stacks, Bölüm 6)</p>
+
+<h4>Sınavdaki UML (birebir)</h4>
+<table class="tbl">
+<tr><th>Metot</th><th>Ne yapar</th><th>Karmaşıklık</th></tr>
+<tr><td><code>isEmpty(): bool</code></td><td>Stack boşsa true</td><td>O(1)</td></tr>
+<tr><td><code>push(item: int): bool</code></td><td>En üste ekler, başarıyı döndürür</td><td>O(1)</td></tr>
+<tr><td><code>pop(): bool</code></td><td>En üsttekini <b>siler</b>; <b>değer döndürmez</b>, sadece başarı</td><td>O(1)</td></tr>
+<tr><td><code>peek(): int</code></td><td>En üstteki elemanın kopyasını döndürür (silmez)</td><td>O(1)</td></tr>
+</table>
+<p>Array-based ve link-based gerçeklemelerde de push/pop/peek <b>O(1)</b>’dir. Stack içinde arama / sayma / silme ise tüm elemanları gezmek gerektiği için <b>O(N)</b>.</p>
+
+<h4>Standart kalıp: “sırayı koru, sadece bir yardımcı stack kullan”</h4>
+<pre class="snippet">Stack temp;
+while (!myStack.isEmpty()) {      // 1) boşalt: elemanları temp'e taşı
+    int x = myStack.peek();       //    önce peek, sonra pop!
+    myStack.pop();
+    /* x ile işini yap (say, karşılaştır, atla...) */
+    temp.push(x);                 //    temp'te sıra TERS olur
+}
+while (!temp.isEmpty()) {         // 2) geri doldur: sıra tekrar düzelir
+    myStack.push(temp.peek());
+    temp.pop();
+}</pre>
+
+<h4>Uygulamalar (Lecture 5)</h4>
+<ul>
+<li><b>Dengeli parantez:</b> açılışı push et; kapanışta stack boşsa ya da üstteki eşleşmiyorsa → dengesiz. Sonda stack boş olmalı.</li>
+<li><b>Postfix hesaplama:</b> sayıyı push et; operatörde iki eleman al: önce alınan <b>sağ</b> operand (op2), sonra alınan <b>sol</b> operand (op1) → <code>op1 op op2</code> sonucu push.</li>
+<li><b>Infix → postfix:</b> operand doğrudan çıktıya; <code>(</code> push; <code>)</code> gelince <code>(</code>’a kadar pop; operatörde üstteki operatörün önceliği <b>≥</b> ise pop et (soldan birleşme), sonra push. Örnek: <code>a-(b+c*d)/e → abcd*+e/-</code>.</li>
+<li>Uçuş haritasında yol arama (backtracking).</li>
+</ul>
+
+<h4>Sınav tuzakları</h4>
+<ul class="traps">
+<li><code>pop()</code> değer döndürmez: <code>int x = s.pop();</code> <b>yanlış</b> → <code>int x = s.peek(); s.pop();</code></li>
+<li>Boş stack’te <code>peek()</code> çağırmak tanımsız davranış: önce <code>isEmpty()</code> kontrolü.</li>
+<li>Stack’i fonksiyona <b>referansla</b> (<code>Stack&amp;</code>) geçirin; değerle geçirirseniz yaptığınız değişiklik çağırana ulaşmaz (sd.pdf Soru 7’deki hata).</li>
+<li>“Sırayı koru” denmişse fonksiyon dönmeden önce elemanları geri doldurmayı unutmayın — <code>return</code>’ü döngünün ortasına koyarsanız geri doldurma atlanır.</li>
+<li>“Sadece başka bir stack” → dizi, <code>vector</code>, Queue, <code>std::stack</code> kullanmak puan kaybettirir.</li>
+<li>Postfix’te operand sırası: <code>10 2 -</code> = 10 − 2 = 8, tersi değil.</li>
+</ul>

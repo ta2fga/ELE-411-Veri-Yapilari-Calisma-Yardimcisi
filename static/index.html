@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ELE411 Çalışma</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f6fde'/%3E%3Cpath d='M9 22h14M9 16h14M9 10h14' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Tema sayfa çizilmeden uygulansın (yanıp sönme olmasın)
+  try { var t = localStorage.getItem('ele411.theme'); if (t) document.documentElement.setAttribute('data-theme', JSON.parse(t)); } catch (e) {}
+</script>
+</head>
+<body>
+<div id="server-banner" class="banner" hidden>
+  <strong>Sunucu çalışmıyor</strong> — klasördeki <code>baslat.bat</code>'ı çift tıklayarak açın, sonra bu sayfayı yenileyin.
+  <span class="banner-sub">Kod derleme ve testler yerel Python sunucusu üzerinden çalışır (http://localhost:8000).</span>
+</div>
+
+<div class="layout">
+  <aside id="sidebar">
+    <div class="side-head">
+      <a href="#/" class="brand"><span class="brand-mark">ELE411</span><span class="brand-sub">Data Structures · Ara Sınav</span></a>
+      <button id="menu-toggle" class="icon-btn" aria-label="Menüyü aç/kapat">☰</button>
+    </div>
+    <div id="countdown" class="countdown"></div>
+    <nav id="topic-nav" aria-label="Konular"></nav>
+    <div class="side-foot">
+      <button id="theme-toggle" class="btn btn-ghost btn-sm" type="button">Tema</button>
+      <span id="gxx-info" class="muted small"></span>
+    </div>
+  </aside>
+  <div class="content">
+    <div id="statusbar" class="statusbar" role="status" aria-live="polite"></div>
+    <main id="main" tabindex="-1">
+      <div class="loading">Yükleniyor…</div>
+    </main>
+  </div>
+</div>
+
+<script src="vendor/codemirror/codemirror.min.js"></script>
+<script src="vendor/codemirror/mode/clike/clike.min.js"></script>
+<script src="vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
+<script src="vendor/codemirror/addon/edit/closebrackets.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
