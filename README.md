@@ -26,7 +26,7 @@ sınavlarından (Midterm 2019, Midterm 2020, midterm.pdf) derlenmiştir.
 
 ## Ne işe yarar?
 
-- **54 soru, 8 konu:** recursion, Big-O, diziler, bağlı listeler, stack, queue, sıralama ve deneme sınavları.
+- **53 soru, 8 konu:** recursion, Big-O, diziler, bağlı listeler, stack, queue, sıralama ve deneme sınavları.
 - **Gerçek derleme:** Kodunuz bilgisayarınızdaki `g++` ile derlenip çalıştırılır. Tarayıcı yalnızca arayüzdür.
 - **Otomatik testler:** "Test et" dediğinizde fonksiyonunuz hazır testlerle sınanır. Her test için girdi,
   beklenen değer ve sizin değeriniz yan yana gösterilir.
@@ -188,14 +188,14 @@ Ardından tarayıcıda <http://localhost:8000> adresini açın. macOS/Linux'ta `
 
 | # | Konu | Sorular |
 |---|---|---|
-| 1 | **Recursion** | factorial, myMult, Hanoi kuleleri, writeBackward (Study 5), çarpmasız çarpma (Study 6), Midterm2019 Q1 izleme, Midterm2019 Q2 (listeyi tersten yazdırma), midterm.pdf BST toplamı, Midterm2020 "recursion'ı anlat" |
+| 1 | **Recursion** | factorial, myMult, Hanoi kuleleri, writeBackward (Study 5), çarpmasız çarpma (Study 6), Midterm2019 Q1 izleme, Midterm2019 Q2 (listeyi tersten yazdırma), Midterm2020 "recursion'ı anlat" |
 | 2 | **Big-O** | Midterm2019 Q4, Midterm2020 (çoktan seçmeli), binary search karşılaştırma sayısı (Study 8; test + kod) |
 | 3 | **Diziler** | ArrayBag, tekrar silme (Study 1), birleştirme (Study 2), sıralı dizide O(log N) sayma (Study 4 / midterm.pdf), Study 10, 11, 14, 15 (LIS), Midterm2019 Q8 |
 | 4 | **Bağlı listeler** | toplam (Study 3), uzunluk iteratif + recursive (Study 16), LinkedBag, Midterm2020 bağlı listede bubble sort |
 | 5 | **Stack** | midterm.pdf arama, Midterm2020 sayma, Midterm2019 Q6, Study 7, parantez dengesi, postfix hesaplama, infix → postfix |
 | 6 | **Queue** | Study 13 (minimum), Study 12 (palindrom), Midterm2019 Q3 ve Midterm2020 testFunction izleme |
 | 7 | **Sıralama** | 5 algoritma için adım adım izleme aracı (3 hazır dizi + rastgele dizi), Midterm2019/2020 izleme, cocktail sort (Midterm2019 Q7), 5 sıralama algoritmasını yazma, karmaşıklık testi |
-| 8 | **Deneme sınavı** | Midterm 2020 (15+15+30+25+30+15 dk), midterm.pdf (3×25 dk), Midterm 2019 (120 dk) |
+| 8 | **Deneme sınavı** | Midterm 2020 (15+15+30+25+30+15 dk), midterm.pdf (2×25 dk), Midterm 2019 (120 dk) |
 
 Her konunun bir de özet sayfası vardır (`problems/topics/<konu>.html`).
 
@@ -211,7 +211,6 @@ kâğıtlarındaki UML diyagramlarıyla birebir aynıdır.
 | `Stack` | `isEmpty()`, `push(int)`, `pop()` → **bool** (değer döndürmez), `peek()` → int |
 | `Queue` | `isEmpty()`, `enqueue(int)`, `dequeue()` → **bool**, `peekFront()` → int |
 | `Node` / `StringNode` | public `item`, `next` + `getItem()`, `getNext()`, `setItem()`, `setNext()` |
-| `TreeNode` | public `int item; TreeNode* left; TreeNode* right;` |
 
 > **Dikkat:** Sınavdaki gibi `pop()` ve `dequeue()` değeri **döndürmez**. Değeri almak için önce
 > `peek()` / `peekFront()` çağırın. Boş bir yapıda `peek()` çağırmak programı açıklayıcı bir hata
@@ -219,8 +218,8 @@ kâğıtlarındaki UML diyagramlarıyla birebir aynıdır.
 
 **Yardımcı fonksiyonlar** (kendi denemeleriniz için):
 `makeStack({1,2,3})` (alttan üste, 3 en üstte), `makeQueue({1,2,3})` (önden arkaya, 1 en önde),
-`makeList(...)`, `makeStringList(...)`, `makeBST(...)`, `printStack` / `printQueue` / `printList`,
-`stackToString` / `queueToString` / `listToString`, `deleteList`, `deleteTree`.
+`makeList(...)`, `makeStringList(...)`, `printStack` / `printQueue` / `printList`,
+`stackToString` / `queueToString` / `listToString`, `deleteList`.
 
 `iostream`, `string` ve `sstream` zaten eklidir ve `using namespace std;` hazırdır.
 
@@ -248,7 +247,7 @@ calisma-sitesi/
 ├── baslat.bat          # Windows için tek tıkla başlatma
 ├── server.py           # Yerel sunucu: derleme, çalıştırma, test (yalnızca standart kütüphane)
 ├── verify.py           # Tüm soruları ve testleri doğrulayan betik
-├── ele411.h            # Stack, Queue, Node, TreeNode ve test makroları
+├── ele411.h            # Stack, Queue, Node, StringNode ve test makroları
 ├── static/             # Arayüz (index.html, app.js, style.css, vendor/codemirror)
 └── problems/
     ├── topics.json     # Konu listesi

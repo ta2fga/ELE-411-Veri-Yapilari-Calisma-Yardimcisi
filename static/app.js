@@ -204,7 +204,7 @@
           <li><b>Çalıştır</b> (<kbd>Ctrl</kbd>+<kbd>Enter</kbd>): kodunuzu kendi <code>main()</code>’iniz ile çalıştırır. İsterseniz stdin girişi verebilirsiniz.</li>
           <li><b>Test et</b> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>): fonksiyonunuzu sorunun testleriyle sınar (<code>main()</code>’iniz yok sayılır). Hepsi geçerse soru “çözüldü” olur.</li>
           <li>İzleme sorularında tahmininizi yazıp kontrol edin; sıralama izlemede her adımı kutulara yazın.</li>
-          <li><code>Stack</code>, <code>Queue</code>, <code>Node</code>, <code>TreeNode</code> sınıfları sınavdaki UML ile aynıdır ve otomatik eklenir. <code>pop()</code> değer döndürmez!</li>
+          <li><code>Stack</code>, <code>Queue</code>, <code>Node</code>, <code>StringNode</code> sınıfları sınavdaki UML ile aynıdır ve otomatik eklenir. <code>pop()</code> değer döndürmez!</li>
           <li>Önerilen sıra: konuları çalış → <a href="#/t/exam">deneme sınavları</a>. Üstteki çubuk sınava hazırlık düzeyinizi gösterir.</li>
         </ul>
       </section>`;

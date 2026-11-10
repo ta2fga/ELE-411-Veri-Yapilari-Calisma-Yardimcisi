@@ -21,6 +21,5 @@
 <li>Base case yoksa ya da ulaşılamıyorsa → sonsuz recursion → <b>stack overflow</b> (ör. negatif sayı verilince <code>y−1</code> hiç 0 olmaz).</li>
 <li>Recursive çağrının sonucunu kullanmayı unutmak: <code>return b + myMult(a−1, b);</code> yerine sadece <code>myMult(a−1, b);</code></li>
 <li>Bağlı listeyi tersten yazdırırken: önce recursive çağrı, <b>sonra</b> yazdırma (sıra önemli).</li>
-<li>Ağaçta boş alt ağaç için (<code>root == nullptr</code>) 0 döndürmeyi unutmayın.</li>
 <li>“Basit, verimli iteratif çözüm varsa recursion kullanma” (fonksiyon çağrısı ek yük getirir).</li>
 </ul>

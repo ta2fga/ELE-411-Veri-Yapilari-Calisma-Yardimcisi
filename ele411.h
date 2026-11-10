@@ -8,7 +8,6 @@
 //    Queue      : isEmpty(), enqueue(int), dequeue() -> bool, peekFront() -> int
 //    Node       : int tutan bağlı liste düğümü   (item, next + get/set)
 //    StringNode : string tutan bağlı liste düğümü (Midterm2019 Q2)
-//    TreeNode   : int item; TreeNode* left; TreeNode* right;  (BST)
 //
 //  Arayüzler sınavlardaki UML ile birebir aynıdır. Özellikle:
 //    * pop() / dequeue() DEĞER DÖNDÜRMEZ, sadece başarılı olup olmadığını
@@ -21,10 +20,9 @@
 //    makeQueue({1,2,3})    -> önden arkaya 1,2,3 (1 en önde)
 //    makeList({1,2,3})     -> 1 -> 2 -> 3 -> nullptr, head pointer döner
 //    makeStringList({"a","b"})
-//    makeBST({5,3,8})      -> sırayla BST'ye ekler, kök döner
 //    printStack(s), printQueue(q), printList(head)
 //    stackToString(s), queueToString(q), listToString(head)
-//    deleteList(head), deleteTree(root)
+//    deleteList(head)
 // =====================================================================
 #ifndef ELE411_H
 #define ELE411_H
@@ -194,17 +192,6 @@ public:
 typedef BasicNode<int> Node;
 typedef BasicNode<std::string> StringNode;
 
-// ---------------------------------------------------------------------
-//  İkili ağaç düğümü (midterm.pdf BST sorusu): root->item, root->left, root->right
-// ---------------------------------------------------------------------
-class TreeNode {
-public:
-    int item;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int anItem) : item(anItem), left(nullptr), right(nullptr) {}
-};
-
 // =====================================================================
 //  Yardımcı fonksiyonlar
 // =====================================================================
@@ -239,21 +226,6 @@ inline StringNode* makeStringList(std::initializer_list<std::string> items) {
 template <class T>
 inline void deleteList(BasicNode<T>* head) {
     while (head != nullptr) { BasicNode<T>* nx = head->next; delete head; head = nx; }
-}
-inline TreeNode* bstInsert(TreeNode* root, int x) {
-    if (root == nullptr) return new TreeNode(x);
-    if (x < root->item) root->left = bstInsert(root->left, x);
-    else root->right = bstInsert(root->right, x);
-    return root;
-}
-inline TreeNode* makeBST(std::initializer_list<int> insertOrder) {
-    TreeNode* root = nullptr;
-    for (int x : insertOrder) root = bstInsert(root, x);
-    return root;
-}
-inline void deleteTree(TreeNode* root) {
-    if (root == nullptr) return;
-    deleteTree(root->left); deleteTree(root->right); delete root;
 }
 
 // Stack içeriği: alttan üste, ör. "[1, 2, 3] (üst: 3)". Orijinal stack değişmez.
