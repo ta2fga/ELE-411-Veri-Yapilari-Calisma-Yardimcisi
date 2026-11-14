@@ -304,7 +304,7 @@ problems/stack/08-yeni-soru/
   (virgül ve köşeli parantez önemsizdir; "boş" = boş).
 - `"mcq"`: `options` (ortak şıklar) ve `items: [{q, code?, options?, answer, explain}]`.
 - `"open"`: `sampleAnswer` (HTML).
-- `"sorttrace"`: `algos` (`selection`, `insertion`, `bubble`, `quick`, `merge`), `arrays`, `random`.
+- `"sorttrace"`: `algos` (`selection`, `insertion`, `bubble`, `quick`, `merge`), `arrays`, `random`. `quick` sekmesinde bölümleme yöntemi seçilir: ders yöntemi (sol/sağ işaretçi, Lecture 6 Figure 11-10; varsayılan) veya Lomuto. İkisinden biri doğru çözülünce quick tamamlanmış sayılır.
 - `"exam"`: `sections: [{problem: "<soru id>", minutes: 15}, ...]`.
 
 `forbidden` için hazır kurallar: `array`, `stl`, `queue`, `stack`, `multiply`, `sort`, `noloop`

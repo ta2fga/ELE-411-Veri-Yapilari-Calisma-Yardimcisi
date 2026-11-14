@@ -550,6 +550,7 @@
     insertion: ["Insertion sort", "Her adımda sıradaki eleman sıralı kısımda yerine yerleştirilir (1. elemandan başlayarak). Her yerleştirmeden sonraki diziyi yazın."],
     bubble: ["Bubble sort", "Her geçişte komşular karşılaştırılıp takas edilir. Takas yapılan her geçişten sonraki diziyi yazın; takas olmayan geçişte durulur (yazılmaz)."],
     quick: ["Quick sort (son eleman pivot)", "Lomuto bölümleme: pivot = alt dizinin son elemanı; ≤ pivot olanlar sola toplanır, sonra pivot yerine konur. Uzunluğu ≥ 2 olan her bölümlemeden sonraki diziyi yazın (önce sol parça)."],
+    quickLR: ["Quick sort (son eleman pivot)", "Ders yöntemi (Lecture 6, Figure 11-10): pivot = alt dizinin son elemanı. indexFromLeft = first, sağa ilerler ve ≥ pivot olan elemanda durur; indexFromRight = last−1, sola ilerler ve ≤ pivot olan elemanda durur (first'in altına inmez). Sol < sağ ise takas edilir ve ikisi de birer adım ilerler; kesişince pivot indexFromLeft'teki elemanla takas edilir. Uzunluğu ≥ 2 olan her bölümlemeden sonraki diziyi yazın (önce sol parça)."],
     merge: ["Merge sort", "Orta = ⌊(first+last)/2⌋, önce sol yarı. Her birleştirmeden sonraki diziyi yazın."],
   };
   function sortSteps(algo, input) {
@@ -589,6 +590,22 @@
         snap(`Bölümleme ${++k}: [${lo}..${hi}], pivot = ${pivot}`);
         qs(lo, i);
         qs(i + 2, hi);
+      })(0, n - 1);
+    } else if (algo === "quickLR") {
+      let k = 0;
+      (function qs(lo, hi) {
+        if (lo >= hi) return;
+        const pivot = a[hi];
+        let L = lo, R = hi - 1;
+        for (;;) {
+          while (a[L] < pivot) L++; // a[hi] = pivot olduğu için en geç hi'de durur
+          while (R > lo && a[R] > pivot) R--;
+          if (L < R) { swap(L, R); L++; R--; } else break;
+        }
+        swap(L, hi);
+        snap(`Bölümleme ${++k}: [${lo}..${hi}], pivot = ${pivot}`);
+        qs(lo, L - 1);
+        qs(L + 1, hi);
       })(0, n - 1);
     } else if (algo === "merge") {
       let k = 0;
@@ -652,13 +669,27 @@
     card.appendChild(body);
 
     const doneKey = (a) => opts.prefix + "stdone." + p.id + "." + a;
+    const qVarKey = opts.prefix + "stquickvar";
+    let qVar = store.get(qVarKey, "quickLR");
     function draw() {
       $$(".seg .btn", controls).forEach((b) => { b.classList.toggle("active", b.dataset.algo === algo); b.classList.toggle("done-algo", !!store.get(doneKey(b.dataset.algo), false)); });
       const arr = arrIdx === -1 && randArr ? randArr : presets[Math.max(arrIdx, 0)];
-      const steps = sortSteps(algo, arr);
-      const ansKey = `${opts.prefix}st.${p.id}.${algo}.${arr.join("_")}`;
+      // Quick sort'ta iki bölümleme yöntemi var; ikisinden biri doğru çözülünce "quick" tamamlanmış sayılır.
+      const run = algo === "quick" ? qVar : algo;
+      const steps = sortSteps(run, arr);
+      const ansKey = `${opts.prefix}st.${p.id}.${run}.${arr.join("_")}`;
       const saved = store.get(ansKey, []);
-      body.innerHTML = `<div class="st-info"><b>${esc(ALGO_INFO[algo][0])}</b> — ${esc(ALGO_INFO[algo][1])}</div>`;
+      body.innerHTML = "";
+      if (algo === "quick") {
+        const vs = el("div", { class: "seg st-variant" });
+        vs.appendChild(el("span", { class: "muted small" }, "Bölümleme yöntemi:"));
+        [["quickLR", "Ders yöntemi (sol/sağ)"], ["quick", "Lomuto"]].forEach(([v, label]) => {
+          const b = btn("btn-sm" + (qVar === v ? " active" : ""), esc(label), () => { qVar = v; store.set(qVarKey, v); draw(); });
+          vs.appendChild(b);
+        });
+        body.appendChild(vs);
+      }
+      body.insertAdjacentHTML("beforeend", `<div class="st-info"><b>${esc(ALGO_INFO[run][0])}</b> — ${esc(ALGO_INFO[run][1])}</div>`);
       const grid = el("div", { class: "st-grid" });
       const mkRow = (label, values, editable, rowIdx) => {
         const row = el("div", { class: "st-row" });

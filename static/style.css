@@ -325,6 +325,7 @@ a.btn:hover { text-decoration: none; }
 .seg .btn.active { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
 .seg .btn.done-algo::after { content: " ✓"; color: var(--ok); }
 .seg .btn.active.done-algo::after { color: inherit; }
+.st-variant { align-items: center; gap: 6px; margin-bottom: 8px; }
 .st-select { width: auto; max-width: 100%; font-size: .85rem; }
 .st-info { font-size: .9rem; background: var(--surface-2); padding: 8px 12px; border-radius: 8px; margin-bottom: 10px; }
 .st-grid { display: flex; flex-direction: column; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
